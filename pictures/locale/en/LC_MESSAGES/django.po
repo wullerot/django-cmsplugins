@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-10 14:26+0200\n"
+"PO-Revision-Date: 2016-08-10 14:43+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:35 cms_plugins.py:72 cms_plugins.py:107 conf.py:28
+#: conf.py:69 conf.py:101
+msgid "content"
+msgstr "Content"
+
+#: cms_plugins.py:36
+msgid "gallery"
+msgstr "Gallery"
+
+#: cms_plugins.py:73 cms_plugins.py:108 models.py:58
+msgid "image"
+msgstr "Image"
+
+#: conf.py:11 conf.py:84
+msgid "none"
+msgstr "None"
+
+#: conf.py:32 conf.py:73 conf.py:105
+msgid "settings"
+msgstr "Settings"
+
+#: conf.py:36
+msgid "advanced settings"
+msgstr "Advanced settings"
+
+#: conf.py:51
+msgid "thumbnail list"
+msgstr "Thumbnail list with Popup"
+
+#: models.py:17
+msgid "in navigation"
+msgstr "Display in navigation"
+
+#: models.py:18 models.py:53
+msgid "visible"
+msgstr "Display Plugin"
+
+#: models.py:19
+msgid "gallery type"
+msgstr "Gallery type"
+
+#: models.py:22 models.py:55
+msgid "css class"
+msgstr "CSS class"
+
+#: models.py:25 models.py:60
+msgid "title"
+msgstr "Title"
+
+#: models.py:26 models.py:61
+msgid "slug"
+msgstr "Slug"
+
+#: models.py:28 models.py:63
+msgid "short description"
+msgstr "Short description"
+
+#: models.py:30 models.py:64
+msgid "long description "
+msgstr "Long description"
+
+#: models.py:54
+msgid "show popup"
+msgstr "Show biger version in a popup"
+
+#~ msgid "inline slideshow"
+#~ msgstr "Inline slideshow"

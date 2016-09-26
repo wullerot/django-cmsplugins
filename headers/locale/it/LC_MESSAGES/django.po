@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-10 14:26+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cms_plugins.py:29 conf.py:27
+msgid "content"
+msgstr ""
+
+#: cms_plugins.py:30
+msgid "header"
+msgstr ""
+
+#: conf.py:10
+msgid "none"
+msgstr ""
+
+#: conf.py:31
+msgid "settings"
+msgstr ""
+
+#: conf.py:35
+msgid "advanced settings"
+msgstr ""
+
+#: conf.py:45
+msgid "defined by css"
+msgstr ""
+
+#: conf.py:46
+msgid "full window height"
+msgstr ""
+
+#: conf.py:47
+#, python-format
+msgid "75% of window height"
+msgstr ""
+
+#: conf.py:48
+#, python-format
+msgid "50% of window height"
+msgstr ""
+
+#: conf.py:49
+#, python-format
+msgid "25% of window height"
+msgstr ""
+
+#: conf.py:50
+msgid "aspect ratio 16:9"
+msgstr ""
+
+#: conf.py:51
+msgid "aspect ratio 2:1"
+msgstr ""
+
+#: conf.py:52
+msgid "aspect ratio 4:1"
+msgstr ""
+
+#: conf.py:59
+msgid "light"
+msgstr ""
+
+#: conf.py:60
+msgid "dark"
+msgstr ""
+
+#: conf.py:67
+msgid "top left"
+msgstr ""
+
+#: conf.py:68
+msgid "top center"
+msgstr ""
+
+#: conf.py:69
+msgid "top right"
+msgstr ""
+
+#: conf.py:70
+msgid "middle left"
+msgstr ""
+
+#: conf.py:71
+msgid "middle center"
+msgstr ""
+
+#: conf.py:72
+msgid "middle right"
+msgstr ""
+
+#: conf.py:73
+msgid "bottom left"
+msgstr ""
+
+#: conf.py:74
+msgid "bottom center"
+msgstr ""
+
+#: conf.py:75
+msgid "bottom right"
+msgstr ""
+
+#: models.py:17
+msgid "in navigation"
+msgstr ""
+
+#: models.py:18
+msgid "visible"
+msgstr ""
+
+#: models.py:19
+msgid "size"
+msgstr ""
+
+#: models.py:21
+msgid "css class"
+msgstr ""
+
+#: models.py:24
+msgid "title"
+msgstr ""
+
+#: models.py:25
+msgid "slug"
+msgstr ""
+
+#: models.py:27
+msgid "body"
+msgstr ""
+
+#: models.py:28
+msgid "text position"
+msgstr ""
+
+#: models.py:31
+msgid "text color"
+msgstr ""
+
+#: models.py:34
+msgid "image"
+msgstr ""

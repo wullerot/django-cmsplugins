@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-13 15:59+0200\n"
+"PO-Revision-Date: 2016-08-05 12:43+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:26 conf.py:28
+msgid "content"
+msgstr "Contenu"
+
+#: cms_plugins.py:27
+msgid "video"
+msgstr ""
+
+#: conf.py:11
+msgid "none"
+msgstr ""
+
+#: conf.py:32
+msgid "settings"
+msgstr "Paramètres"
+
+#: conf.py:44
+msgid "advanced settings"
+msgstr "Paramètres avancés"
+
+#: conf.py:54
+msgid "aspect ratio 16:9"
+msgstr "16: 9 rapport d'aspect"
+
+#: conf.py:55
+#, fuzzy
+#| msgid "aspect ratio 4:1"
+msgid "aspect ratio 4:3"
+msgstr "4:1 rapport d'aspect"
+
+#: conf.py:56
+msgid "full window height"
+msgstr "Hauteur de la fenêtre"
+
+#: models.py:18
+msgid "in navigation"
+msgstr "dans la navigation"
+
+#: models.py:19
+msgid "visible"
+msgstr "Plugin visible"
+
+#: models.py:20
+msgid "size"
+msgstr "Taille"
+
+#: models.py:23
+msgid "auto play"
+msgstr ""
+
+#: models.py:24
+msgid "loop"
+msgstr ""
+
+#: models.py:25
+msgid "show controls"
+msgstr ""
+
+#: models.py:26
+msgid "only youtube"
+msgstr ""
+
+#: models.py:27
+msgid "show infos"
+msgstr ""
+
+#: models.py:28
+msgid "allow fullscreen"
+msgstr ""
+
+#: models.py:29
+msgid "css class"
+msgstr ""
+
+#: models.py:32
+msgid "title"
+msgstr "Titre"
+
+#: models.py:33
+msgid "display title"
+msgstr ""
+
+#: models.py:34
+msgid "description"
+msgstr ""
+
+#: models.py:36
+msgid "slug"
+msgstr "Slug"
+
+#: models.py:38
+msgid "video url"
+msgstr ""
+
+#: models.py:39
+msgid "youtube & vimeo urls only"
+msgstr ""
+
+#: models.py:40
+msgid "image"
+msgstr "Image"
+
+#~ msgid "header"
+#~ msgstr "Header"
+
+#~ msgid "defined by css"
+#~ msgstr "Défini par css"
+
+#~ msgid "75% of window height"
+#~ msgstr "75% de la hauteur de la fenêtre"
+
+#~ msgid "50% of window height"
+#~ msgstr "50% de la hauteur de la fenêtre"
+
+#~ msgid "25% of window height"
+#~ msgstr "25% de la hauteur de la fenêtre"
+
+#~ msgid "aspect ratio 2:1"
+#~ msgstr "2:1 rapport d'aspect"
+
+#~ msgid "light"
+#~ msgstr "claire"
+
+#~ msgid "dark"
+#~ msgstr "foncé"
+
+#, fuzzy
+#~| msgid "left"
+#~ msgid "top left"
+#~ msgstr "à gauche"
+
+#, fuzzy
+#~| msgid "center"
+#~ msgid "top center"
+#~ msgstr "au centre"
+
+#, fuzzy
+#~| msgid "right"
+#~ msgid "top right"
+#~ msgstr "à droite"
+
+#, fuzzy
+#~| msgid "center"
+#~ msgid "middle center"
+#~ msgstr "au centre"
+
+#, fuzzy
+#~| msgid "center"
+#~ msgid "bottom center"
+#~ msgstr "au centre"
+
+#~ msgid "body"
+#~ msgstr "Sous-titre"
+
+#~ msgid "text position"
+#~ msgstr "Position du texte"
+
+#~ msgid "text color"
+#~ msgstr "Couleur de texte"

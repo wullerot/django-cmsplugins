@@ -1,0 +1,35 @@
+{% spaceless %}
+{% load thumbnail %}
+
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div class="plugin plugin-picture{{ object.css_classes }}">
+        {% if object.image  %}
+            {% if object.show_popup %}
+                {% thumbnail object.image 3000x3000 as big %}
+                <a class="popup-image" href="{{ big.url }}" title="{{ object.name }}" target="_blank">
+            {% endif %}
+            {% thumbnail object.image 64x128 as tiny %}
+            {% thumbnail object.image 2000x4000 as thumb %}
+            {% if object.height %}
+                <span role="img" class="image image-cropped lazyload" style="background-image: url({{ tiny.url }});" data-src="{{ thumb.url }}">{{ object.name }}</span>
+            {% else %}
+                <img class="image lazyload" src="{{ tiny.url }}" data-src="{{ thumb.url }}" alt="{{ object.name }}">
+            {% endif %}
+            {% if object.abstract or object.description %}
+                <div class="text">
+                    {% if object.abstract %}
+                        <div class="abstract">{{ object.abstract|linebreaks }}</div>
+                    {% endif %}
+                    {% if object.description %}
+                        <div class="description">{{ object.description|linebreaks }}</div>
+                    {% endif %}
+                </div>
+            {% endif %}
+            {% if object.show_popup %}
+                </a>
+            {% endif %}
+        {% endif %}
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+{% endspaceless %}

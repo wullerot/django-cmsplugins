@@ -1,0 +1,11 @@
+{% spaceless %}
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div id="{{ object.slug }}" class="plugin plugin-iframe{{ object.css_classes }}">
+        {% if object.title %}
+            <h2>{{ object.title|linebreaksbr }}</h2>
+        {% endif %}
+        <div class="iframe-wrap">{{ object.iframe }}</div>
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+{% endspaceless %}

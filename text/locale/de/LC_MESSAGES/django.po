@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-17 12:06+0200\n"
+"PO-Revision-Date: 2016-08-17 12:08+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:28 cms_plugins.py:53 cms_plugins.py:78 conf.py:21 conf.py:42
+#: conf.py:63
+msgid "content"
+msgstr "Inhalt"
+
+#: cms_plugins.py:29
+msgid "text (editor)"
+msgstr "Text"
+
+#: cms_plugins.py:54
+msgid "plain text"
+msgstr "Text (klartext)"
+
+#: cms_plugins.py:79
+msgid "title h1"
+msgstr "Seitentitel (H1)"
+
+#: models.py:16
+msgid "body"
+msgstr "Inhalt"
+
+#~ msgid "text"
+#~ msgstr "Text"
+
+#~ msgid "teaser container"
+#~ msgstr "Teaser Container"
+
+#~ msgid "page teaser"
+#~ msgstr "Seitenteaser"
+
+#~ msgid "none"
+#~ msgstr "Keine"
+
+#~ msgid "link"
+#~ msgstr "Sitenlink"
+
+#~ msgid "icon"
+#~ msgstr "Symbol"
+
+#~ msgid "advanced settings"
+#~ msgstr "Erweiterte Einstellungen"
+
+#~ msgid "design"
+#~ msgstr "Design"
+
+#~ msgid "visible"
+#~ msgstr "Plugin anzeigen"
+
+#~ msgid "css class"
+#~ msgstr "CSS Klasse"
+
+#~ msgid "page"
+#~ msgstr "Seite"
+
+#~ msgid "anchor"
+#~ msgstr "Anker"
+
+#~ msgid "image"
+#~ msgstr "Bild"
+
+#~ msgid "icon svg"
+#~ msgstr "Symbol SVG"
+
+#~ msgid "icon image"
+#~ msgstr "Symbol PNG"
+
+#~ msgid "{0} (hidden)"
+#~ msgstr "{0} (versteckt)"
+
+#~ msgid "Layout"
+#~ msgstr "Layout"
+
+#~ msgid "---"
+#~ msgstr "---"
+
+#~ msgid "Stadard"
+#~ msgstr "Standard"
+
+#~ msgid "in navigation"
+#~ msgstr "Im Menu"
+
+#~ msgid "display title"
+#~ msgstr "Titel anzeigen"
+
+#~ msgid "background color"
+#~ msgstr "Hintergrundsfarbe"
+
+#~ msgid "additional css classses"
+#~ msgstr "Zusätzliche css Klassen"
+
+#~ msgid "teaser wrap"
+#~ msgstr "Teaser Container"
+
+#~ msgid "teaser wraps"
+#~ msgstr "Teaser Container"
+
+#~ msgid "teasers"
+#~ msgstr "Teasers"

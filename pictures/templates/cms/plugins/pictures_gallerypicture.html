@@ -1,0 +1,17 @@
+{% spaceless %}
+{% load thumbnail %}
+
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div class="entry entry-{{ gallery_layout }}{{ object.css_classes }}">
+        {% if object.image  %}
+            {% thumbnail object.image 80x45 crop=1 subject_location=object.image.subject_location as tiny %}
+            {% thumbnail object.image 800x450 crop=1 subject_location=object.image.subject_location as thumb %}
+            {% thumbnail object.image 3000x3000 as big %}
+            <a class="gallery-link" href="{{ big.url }}" title="{{ object.name }}">
+                <img class="image lazyload" src="{{ tiny.url }}" data-src="{{ thumb.url }}" alt="{{ object.name }}">
+            </a>
+        {% endif %}
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+{% endspaceless %}

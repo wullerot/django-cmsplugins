@@ -1,0 +1,34 @@
+{% spaceless %}
+{% load i18n thumbnail %}
+
+{% if object.is_visible or request.toolbar.edit_mode %}
+    {# !!! do not change !!! #}
+    <div class="plugin plugin-slide slide{{ object.css_classes }}"{{ object.html_data }}>
+        {% if object.image  %}
+            {% thumbnail object.image 3000x3000 as thumb %}
+            {% thumbnail object.image 64x64 quality=20 as tiny %}
+        {% endif %}
+        {# !!! do not change !!! #}
+        <div class="slide-image" data-src="{{ thumb.url }}">
+            <img class="image" src="{{ tiny.url }}" alt="{{ object.name }}">
+        </div>
+        {% if object.title or object.abstract or object.description %}
+            {# !!! do not change !!! #}
+            <div class="slide-text">
+                {# changable #}
+                {% if object.title %}
+                    <div class="title">{{ object.title|linebreaksbr }}</div>
+                {% endif %}
+                {% if object.abstract %}
+                    <div class="abstract">{{ object.abstract|linebreaks }}</div>
+                {% endif %}
+                {% if object.description %}
+                    <div class="description">{{ object.description|linebreaks }}</div>
+                {% endif %}
+                {# endchangable #}
+            </div>
+        {% endif %}
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+{% endspaceless %}

@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-10 14:27+0200\n"
+"PO-Revision-Date: 2016-08-05 12:10+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:31
+msgid "layout"
+msgstr "Layout"
+
+#: cms_plugins.py:32
+msgid "section"
+msgstr "Section"
+
+#: conf.py:11
+msgid "---"
+msgstr "---"
+
+#: conf.py:12
+msgid "dark"
+msgstr "dark"
+
+#: conf.py:13
+msgid "light"
+msgstr "light"
+
+#: conf.py:20
+msgid "none"
+msgstr "none"
+
+#: conf.py:37
+msgid "settings"
+msgstr "Settings"
+
+#: conf.py:41 models.py:19
+msgid "title"
+msgstr "Title"
+
+#: conf.py:45
+msgid "icon"
+msgstr "Icon"
+
+#: conf.py:49
+msgid "design"
+msgstr "Design"
+
+#: conf.py:59
+msgid "div"
+msgstr "div"
+
+#: conf.py:60
+msgid "article (if this section could be a page of its own)"
+msgstr "article (if this section could be a page of its own)"
+
+#: conf.py:61
+msgid "section (if this section has a title)"
+msgstr "section (if this section has a title)"
+
+#: models.py:17
+msgid "in navigation"
+msgstr "Display in navigation"
+
+#: models.py:18
+msgid "visible"
+msgstr "Display Plugin"
+
+#: models.py:20
+msgid "display title"
+msgstr "Display title on page"
+
+#: models.py:21
+msgid "slug"
+msgstr "Slug"
+
+#: models.py:23
+msgid "background color"
+msgstr "Background color"
+
+#: models.py:27
+msgid "background image"
+msgstr "Background image"
+
+#: models.py:31
+msgid "icon svg"
+msgstr "Icon SVG"
+
+#: models.py:32
+msgid "icon image"
+msgstr "Icon PNG"
+
+#: models.py:36
+msgid "css class"
+msgstr "CSS class"
+
+#: models.py:39
+msgid "html tag"
+msgstr "HTML tag"
+
+#: models.py:46
+#, python-brace-format
+msgid "{0} (hidden)"
+msgstr "{0} (hidden)"
+
+#: utils.py:11
+msgid "hidden"
+msgstr "hidden"
+
+#~ msgid "column"
+#~ msgstr "column"
+
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#~ msgid "80%"
+#~ msgstr "80%"
+
+#~ msgid "75%"
+#~ msgstr "75%"
+
+#~ msgid "66%"
+#~ msgstr "66%"
+
+#~ msgid "60%"
+#~ msgstr "60%"
+
+#~ msgid "50%"
+#~ msgstr "50%"
+
+#~ msgid "40%"
+#~ msgstr "40%"
+
+#~ msgid "33%"
+#~ msgstr "33%"
+
+#~ msgid "25%"
+#~ msgstr "25%"
+
+#~ msgid "20%"
+#~ msgstr "20%"
+
+#~ msgid "width"
+#~ msgstr "width"

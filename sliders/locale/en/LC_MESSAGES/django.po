@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-11 13:40+0200\n"
+"PO-Revision-Date: 2016-08-11 14:06+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:30 cms_plugins.py:61 conf.py:28
+msgid "content"
+msgstr "Content"
+
+#: cms_plugins.py:31
+msgid "slider"
+msgstr "Slider"
+
+#: cms_plugins.py:62
+msgid "slide"
+msgstr "Slide"
+
+#: conf.py:11 conf.py:66
+msgid "none"
+msgstr "None"
+
+#: conf.py:32
+msgid "settings"
+msgstr "Settings"
+
+#: conf.py:41 conf.py:100
+msgid "advanced settings"
+msgstr "Advanced settings"
+
+#: conf.py:51
+msgid "defined by css"
+msgstr "Defined by CSS"
+
+#: conf.py:52
+msgid "full window height"
+msgstr "Full window height"
+
+#: conf.py:53
+#, python-format
+msgid "75% of window height"
+msgstr "75% of window height"
+
+#: conf.py:54
+#, python-format
+msgid "50% of window height"
+msgstr "50% of window height"
+
+#: conf.py:55
+#, python-format
+msgid "25% of window height"
+msgstr "50% of window height"
+
+#: conf.py:56
+msgid "aspect ratio 16:9"
+msgstr "16:9 aspect ratio"
+
+#: conf.py:57
+msgid "aspect ratio 2:1"
+msgstr "2:1 aspect ratio"
+
+#: conf.py:58
+msgid "aspect ratio 4:1"
+msgstr "4:1 aspect ratio"
+
+#: conf.py:83
+msgid "text"
+msgstr "Text"
+
+#: conf.py:93 models.py:85
+msgid "image"
+msgstr "Image"
+
+#: conf.py:110 conf.py:123
+msgid "fade in"
+msgstr "Fade in"
+
+#: conf.py:111
+msgid "bottom up"
+msgstr "Bottom up"
+
+#: conf.py:112 conf.py:121
+msgid "left to right"
+msgstr "Left to right"
+
+#: conf.py:113 conf.py:122
+msgid "right to left"
+msgstr "Right to left"
+
+#: conf.py:114
+msgid "top down"
+msgstr "Top down"
+
+#: conf.py:130
+msgid "light"
+msgstr "Light"
+
+#: conf.py:131
+msgid "dark"
+msgstr "Dark"
+
+#: conf.py:138
+msgid "top left"
+msgstr "Top left"
+
+#: conf.py:139
+msgid "top center"
+msgstr "Top center"
+
+#: conf.py:140
+msgid "top right"
+msgstr "Top right"
+
+#: conf.py:141
+msgid "middle left"
+msgstr "Middle left"
+
+#: conf.py:142
+msgid "middle center"
+msgstr "Middle center"
+
+#: conf.py:143
+msgid "middle right"
+msgstr "Middle right"
+
+#: conf.py:144
+msgid "bottom left"
+msgstr "Bottom left"
+
+#: conf.py:145
+msgid "bottom center"
+msgstr "Bottom center"
+
+#: conf.py:146
+msgid "bottom right"
+msgstr "Bottom right"
+
+#: models.py:17
+msgid "in navigation"
+msgstr "Display in navigatio"
+
+#: models.py:18 models.py:70
+msgid "visible"
+msgstr "Display plugin"
+
+#: models.py:19
+msgid "size"
+msgstr "Size"
+
+#: models.py:22 models.py:71
+msgid "css class"
+msgstr "CSS Class"
+
+#: models.py:25 models.py:74
+msgid "title"
+msgstr "Title"
+
+#: models.py:26
+msgid "display title"
+msgstr "Display title"
+
+#: models.py:27
+msgid "slug"
+msgstr "Slug"
+
+#: models.py:29
+msgid "auto play"
+msgstr "Autoplay"
+
+#: models.py:30
+msgid "loop"
+msgstr "Loop"
+
+#: models.py:31
+msgid "show arrows"
+msgstr "Show arrows"
+
+#: models.py:32
+msgid "show indicators"
+msgstr "Show indicators"
+
+#: models.py:75
+msgid "body"
+msgstr "Description"
+
+#: models.py:76
+msgid "text position"
+msgstr "Text position"
+
+#: models.py:79
+msgid "text color"
+msgstr "Text color"
+
+#: models.py:82
+msgid "text animation"
+msgstr "Text animation"
+
+#: models.py:87
+msgid "image animation"
+msgstr "Image animation"

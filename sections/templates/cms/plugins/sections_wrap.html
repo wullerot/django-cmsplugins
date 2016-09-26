@@ -1,0 +1,20 @@
+{% spaceless %}
+{% load i18n cms_tags %}
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <{{ object.html_tag }} id="{{ object.slug }}" class="plugin-wrap{{ object.css_classes }}"{{ object.html_style }}>
+        {% if object.icon %}
+            {{ object.icon }}
+        {% endif %}
+        {% if object.tile %}
+            <h2 class="wrap-title">{{ object.title|linebreaksbr }}</h2>
+        {% endif %}
+        <div class="wrap-plugins">
+            {% for plugin in object.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+        </div>
+        {{ indicator_hidden }}
+    </{{ object.html_tag }}>
+{% endif %}
+
+{% endspaceless %}

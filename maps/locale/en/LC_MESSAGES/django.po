@@ -1,0 +1,240 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-16 12:29+0200\n"
+"PO-Revision-Date: 2016-08-16 12:40+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:28 cms_plugins.py:58 conf.py:38 conf.py:125
+msgid "content"
+msgstr "Content"
+
+#: cms_plugins.py:29
+msgid "Google Map"
+msgstr "Google Map"
+
+#: cms_plugins.py:59
+msgid "Google Street View"
+msgstr "Google Street View"
+
+#: conf.py:21
+msgid "none"
+msgstr "None"
+
+#: conf.py:49 conf.py:134
+msgid "settings"
+msgstr "Settings"
+
+#: conf.py:58 conf.py:141
+msgid "advanced settings"
+msgstr "Advanced settings"
+
+#: conf.py:72 conf.py:149
+msgid "plugin settings"
+msgstr "Plugin settings"
+
+#: conf.py:87
+msgid "Roadmap: displays a normal street map."
+msgstr "Roadmap: displays a normal street map."
+
+#: conf.py:88
+msgid ""
+"Hybrid: displays a transparent layer of major streets on satellite images."
+msgstr ""
+"Hybrid: displays a transparent layer of major streets on satellite images."
+
+#: conf.py:90
+msgid "Satellite: displays satellite images."
+msgstr "Satellite: displays satellite images."
+
+#: conf.py:91
+msgid ""
+"Terrain: displays maps with physical features such as terrain and "
+"vegetation."
+msgstr ""
+"Terrain: displays maps with physical features such as terrain and "
+"vegetation."
+
+#: conf.py:99
+msgid "aspect ratio 4:3"
+msgstr "4:3 aspect ratio"
+
+#: conf.py:100
+msgid "aspect ratio 16:9"
+msgstr "16:9 aspect ratio"
+
+#: conf.py:101
+msgid "full window height"
+msgstr "Windowheight"
+
+#: conf.py:102
+msgid "defined by css"
+msgstr "Defined by CSS"
+
+#: forms.py:32
+msgid "Must be a positive integer followed by “px” or “%”."
+msgstr "Must be a positive integer followed by “px” or “%”."
+
+#: forms.py:35
+msgid "Must be a positive integer followed by “px”."
+msgstr "Must be a positive integer followed by “px”."
+
+#: models.py:21
+msgid "in navigation"
+msgstr "Display in navigation"
+
+#: models.py:22
+msgid "visible"
+msgstr "Display Plugin"
+
+#: models.py:23
+msgid "css class"
+msgstr "CSS class"
+
+#: models.py:26
+msgid "size"
+msgstr "Size"
+
+#: models.py:28
+msgid "title"
+msgstr "Title"
+
+#: models.py:29
+msgid "display title"
+msgstr "Display title on page"
+
+#: models.py:30
+msgid "slug"
+msgstr "Slug"
+
+#: models.py:32
+msgid "address"
+msgstr "Address"
+
+#: models.py:33
+msgid "zip code"
+msgstr "ZIP code"
+
+#: models.py:34
+msgid "city"
+msgstr "City"
+
+#: models.py:35
+msgid "additional content"
+msgstr "Additional content"
+
+#: models.py:36
+msgid "content help"
+msgstr "Displayed under address in  the info bubble."
+
+#: models.py:37
+msgid "additional content image"
+msgstr "Image for the additional content"
+
+#: models.py:40
+msgid "map type"
+msgstr "Map type"
+
+#: models.py:43
+msgid "custom map style"
+msgstr "Custom map style"
+
+#: models.py:44
+msgid "google map styles"
+msgstr "Google map styles"
+
+#: models.py:45
+msgid "zoom level"
+msgstr "Zoom level"
+
+#: models.py:47
+msgid "latitude"
+msgstr "Latitude"
+
+#: models.py:48
+msgid "longitude"
+msgstr "Longitude"
+
+#: models.py:49
+msgid "lat help"
+msgstr ""
+"Use latitude & longitude to fine tune the map position.\n"
+"Leave empty for automatic generation."
+
+#: models.py:50
+msgid "camera orientation"
+msgstr "Camera orientation"
+
+#: models.py:52
+msgid "camera pitch"
+msgstr "Camera angle (height)"
+
+#: models.py:54
+msgid "route planner title"
+msgstr "Route planner title"
+
+#: models.py:56
+msgid "Calculate your fastest way to here"
+msgstr "Calculate your fastest way to here"
+
+#: models.py:58
+msgid "route planner"
+msgstr "Route planner"
+
+#: models.py:59
+msgid "info window"
+msgstr "Display info window"
+
+#: models.py:60
+msgid "Show textbox over marker"
+msgstr "If set to, the bubble with the additional content will be dispkayed"
+
+#: models.py:61
+msgid "scrollwheel"
+msgstr "Scrollwheel"
+
+#: models.py:62
+msgid "scrollwheel help"
+msgstr "Enable scrollwheel zooming on the map"
+
+#: models.py:63
+msgid "double click zoom"
+msgstr "Double click zoom"
+
+#: models.py:65
+msgid "draggable"
+msgstr "Draggable"
+
+#: models.py:66
+msgid "keyboard shortcuts"
+msgstr "Keyboard shortcuts"
+
+#: models.py:68
+msgid "Pan control"
+msgstr "Panorama control"
+
+#: models.py:69
+msgid "zoom control"
+msgstr "Zoom controls"
+
+#: models.py:70
+msgid "Street View control"
+msgstr "Street View control"
+
+#: models.py:76
+#, python-brace-format
+msgid "{0} (hidden)"
+msgstr "{0} (hidden)"

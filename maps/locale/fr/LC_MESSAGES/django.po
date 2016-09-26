@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Jérôme Place <djayp83@hotmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-16 12:30+0200\n"
+"PO-Revision-Date: 2014-03-03 18:11+0000\n"
+"Last-Translator: Jérôme Place <djayp83@hotmail.com>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/django-cms/"
+"language/fr/)\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: cms_plugins.py:28 cms_plugins.py:58 conf.py:38 conf.py:125
+#, fuzzy
+#| msgid "content help"
+msgid "content"
+msgstr "Affiché sous l'adresse de l'infobulle."
+
+#: cms_plugins.py:29
+msgid "Google Map"
+msgstr "Google Map"
+
+#: cms_plugins.py:59
+msgid "Google Street View"
+msgstr ""
+
+#: conf.py:21
+msgid "none"
+msgstr ""
+
+#: conf.py:49 conf.py:134
+msgid "settings"
+msgstr ""
+
+#: conf.py:58 conf.py:141
+msgid "advanced settings"
+msgstr ""
+
+#: conf.py:72 conf.py:149
+msgid "plugin settings"
+msgstr ""
+
+#: conf.py:87
+msgid "Roadmap: displays a normal street map."
+msgstr ""
+
+#: conf.py:88
+msgid ""
+"Hybrid: displays a transparent layer of major streets on satellite images."
+msgstr ""
+
+#: conf.py:90
+msgid "Satellite: displays satellite images."
+msgstr ""
+
+#: conf.py:91
+msgid ""
+"Terrain: displays maps with physical features such as terrain and vegetation."
+msgstr ""
+
+#: conf.py:99
+msgid "aspect ratio 4:3"
+msgstr ""
+
+#: conf.py:100
+msgid "aspect ratio 16:9"
+msgstr ""
+
+#: conf.py:101
+msgid "full window height"
+msgstr ""
+
+#: conf.py:102
+msgid "defined by css"
+msgstr ""
+
+#: forms.py:32
+msgid "Must be a positive integer followed by “px” or “%”."
+msgstr "Doit être un entier positif suivi de « px » ou « % »."
+
+#: forms.py:35
+msgid "Must be a positive integer followed by “px”."
+msgstr "Doit être un entier positif suivi de « px »."
+
+#: models.py:21
+msgid "in navigation"
+msgstr ""
+
+#: models.py:22
+msgid "visible"
+msgstr ""
+
+#: models.py:23
+msgid "css class"
+msgstr ""
+
+#: models.py:26
+msgid "size"
+msgstr ""
+
+#: models.py:28
+#, fuzzy
+#| msgid "map title"
+msgid "title"
+msgstr "titre de la carte"
+
+#: models.py:29
+#, fuzzy
+#| msgid "map title"
+msgid "display title"
+msgstr "titre de la carte"
+
+#: models.py:30
+msgid "slug"
+msgstr ""
+
+#: models.py:32
+msgid "address"
+msgstr "adresse"
+
+#: models.py:33
+msgid "zip code"
+msgstr "code postal"
+
+#: models.py:34
+msgid "city"
+msgstr "ville"
+
+#: models.py:35
+msgid "additional content"
+msgstr "contenu additionnel"
+
+#: models.py:36
+msgid "content help"
+msgstr "Affiché sous l'adresse de l'infobulle."
+
+#: models.py:37
+#, fuzzy
+#| msgid "additional content"
+msgid "additional content image"
+msgstr "contenu additionnel"
+
+#: models.py:40
+msgid "map type"
+msgstr ""
+
+#: models.py:43
+msgid "custom map style"
+msgstr ""
+
+#: models.py:44
+msgid "google map styles"
+msgstr ""
+
+#: models.py:45
+msgid "zoom level"
+msgstr "niveau de zoom"
+
+#: models.py:47
+msgid "latitude"
+msgstr "latitude"
+
+#: models.py:48
+msgid "longitude"
+msgstr "longitude"
+
+#: models.py:49
+msgid "lat help"
+msgstr ""
+"Utiliser la longitude et la latitude pour régler finement le positionnement "
+"de la carte."
+
+#: models.py:50
+msgid "camera orientation"
+msgstr ""
+
+#: models.py:52
+msgid "camera pitch"
+msgstr ""
+
+#: models.py:54
+#, fuzzy
+#| msgid "route planer title"
+msgid "route planner title"
+msgstr "Titre du planificateur de trajets"
+
+#: models.py:56
+msgid "Calculate your fastest way to here"
+msgstr "Calculer la route la plus rapide vers ce lieu"
+
+#: models.py:58
+#, fuzzy
+#| msgid "route planer"
+msgid "route planner"
+msgstr "Planificateur de trajets"
+
+#: models.py:59
+msgid "info window"
+msgstr "fenêtre d'information"
+
+#: models.py:60
+msgid "Show textbox over marker"
+msgstr "Affiche la boîte de dialogue au-dessus du marqueur"
+
+#: models.py:61
+msgid "scrollwheel"
+msgstr "roulette de défilement"
+
+#: models.py:62
+msgid "scrollwheel help"
+msgstr "Activé le zoom par la roulette de défilement"
+
+#: models.py:63
+msgid "double click zoom"
+msgstr "zoom lors d'un double-clique"
+
+#: models.py:65
+msgid "draggable"
+msgstr "glissable"
+
+#: models.py:66
+msgid "keyboard shortcuts"
+msgstr "raccourcis clavier"
+
+#: models.py:68
+msgid "Pan control"
+msgstr "Commandes de navigation"
+
+#: models.py:69
+msgid "zoom control"
+msgstr "commande de zoom"
+
+#: models.py:70
+msgid "Street View control"
+msgstr "Commande Street View"
+
+#: models.py:76
+#, python-brace-format
+msgid "{0} (hidden)"
+msgstr ""
+
+#~ msgid "Your address: "
+#~ msgstr "Votre adresse:"
+
+#~ msgid "Calculate route"
+#~ msgstr "Calculer la route"
+
+#~ msgid "Advanced"
+#~ msgstr "Avancé"
+
+#~ msgid "width"
+#~ msgstr "largeur"
+
+#~ msgid "Plugin width (in pixels or percent)."
+#~ msgstr "Largeur du greffon (en pixels ou pourcentage)."
+
+#~ msgid "height"
+#~ msgstr "hauteur"
+
+#~ msgid "Plugin height (in pixels)."
+#~ msgstr "Hauteur du greffon (en pixels)."
+
+#~ msgid "Map"
+#~ msgstr "Carte"

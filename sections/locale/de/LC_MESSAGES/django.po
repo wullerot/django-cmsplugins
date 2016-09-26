@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-10 14:27+0200\n"
+"PO-Revision-Date: 2016-08-10 14:40+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:31
+msgid "layout"
+msgstr "Darstellung"
+
+#: cms_plugins.py:32
+msgid "section"
+msgstr "Abschnitt"
+
+#: conf.py:11
+msgid "---"
+msgstr "---"
+
+#: conf.py:12
+msgid "dark"
+msgstr "Dunkel"
+
+#: conf.py:13
+msgid "light"
+msgstr "Hell"
+
+#: conf.py:20
+msgid "none"
+msgstr "Keine"
+
+#: conf.py:37
+msgid "settings"
+msgstr "Einstellungen"
+
+#: conf.py:41 models.py:19
+msgid "title"
+msgstr "Titel"
+
+#: conf.py:45
+msgid "icon"
+msgstr "Symbol"
+
+#: conf.py:49
+msgid "design"
+msgstr "Design"
+
+#: conf.py:59
+msgid "div"
+msgstr "div"
+
+#: conf.py:60
+msgid "article (if this section could be a page of its own)"
+msgstr "article (wenn dieser Abschnitt eine eigene Seite sein könnte)"
+
+#: conf.py:61
+msgid "section (if this section has a title)"
+msgstr ""
+"section (wenn dieser Abschnitt einen Titel hat und keine eigen Seite sein "
+"könnte)"
+
+#: models.py:17
+msgid "in navigation"
+msgstr "Im Menu anzeigen"
+
+#: models.py:18
+msgid "visible"
+msgstr "Plugin anzeigen"
+
+#: models.py:20
+msgid "display title"
+msgstr "Titel anzeigen"
+
+#: models.py:21
+msgid "slug"
+msgstr "Slug"
+
+#: models.py:23
+msgid "background color"
+msgstr "Hintergrundfarbe"
+
+#: models.py:27
+msgid "background image"
+msgstr "Hintergrundbild"
+
+#: models.py:31
+msgid "icon svg"
+msgstr "Symbol SVG"
+
+#: models.py:32
+msgid "icon image"
+msgstr "Symbol PNG"
+
+#: models.py:36
+msgid "css class"
+msgstr "CSS Klasse"
+
+#: models.py:39
+msgid "html tag"
+msgstr "HTML Tag"
+
+#: models.py:46
+#, python-brace-format
+msgid "{0} (hidden)"
+msgstr "{0} (unsichtbar)"
+
+#: utils.py:11
+msgid "hidden"
+msgstr "Unsichtbar"
+
+#~ msgid "column"
+#~ msgstr "Spalte"
+
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#~ msgid "80%"
+#~ msgstr "80%"
+
+#~ msgid "75%"
+#~ msgstr "75%"
+
+#~ msgid "66%"
+#~ msgstr "66%"
+
+#~ msgid "60%"
+#~ msgstr "60%"
+
+#~ msgid "50%"
+#~ msgstr "50%"
+
+#~ msgid "40%"
+#~ msgstr "40%"
+
+#~ msgid "33%"
+#~ msgstr "33%"
+
+#~ msgid "25%"
+#~ msgstr "25%"
+
+#~ msgid "20%"
+#~ msgstr "20%"
+
+#~ msgid "width"
+#~ msgstr "Breite"
+
+#~ msgid "Spalte"
+#~ msgstr "Spalte"
+
+#~ msgid "Abschnitt"
+#~ msgstr "Abschnitt"
+
+#~ msgid "Hintergrundfarbe"
+#~ msgstr "Hintergrundfarbe"
+
+#~ msgid "Stadard"
+#~ msgstr "Standard"
+
+#~ msgid "im Menu"
+#~ msgstr "Im Menu anzeigen"
+
+#~ msgid "Titel"
+#~ msgstr "Titel"
+
+#~ msgid "Symbol"
+#~ msgstr "Symbol"

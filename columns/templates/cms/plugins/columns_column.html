@@ -1,0 +1,18 @@
+{% spaceless %}
+{% load cms_tags %}
+
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div class="plugin plugin-column{{ object.css_classes }}">
+        {% if object.title %}
+            <h2 class="title">{{ object.title|linebreaksbr }}</h2>
+        {% endif %}
+        <div class="plugins">
+            {% for plugin in object.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+        </div>
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+
+{% endspaceless %}

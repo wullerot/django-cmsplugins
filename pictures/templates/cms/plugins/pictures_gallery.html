@@ -1,0 +1,30 @@
+{% spaceless %}
+{% load cms_tags %}
+
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div id="{{ object.slug }}" class="plugin plugin-gallery{{ object.css_classes }}">
+        {% if object.name or object.abstract or object.description %}
+            <div class="text">
+                {% if object.title %}
+                    <h2>{{ object.title|linebreaksbr }}</h2>
+                {% endif %}
+                {% if object.abstract %}
+                    <div class="abstract">{{ object.abstract|linebreaks }}</div>
+                {% endif %}
+                {% if object.description %}
+                    <div class="description">{{ object.description|linebreaks }}</div>
+                {% endif %}
+            </div>
+        {% endif %}
+        <div class="popup-gallery pictures">
+            {% with gallery_type=object.gallery_layout %}
+                {% for plugin in object.child_plugin_instances %}
+                    {% render_plugin plugin %}
+                {% endfor %}
+            {% endwith %}
+        </div>
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+
+{% endspaceless %}

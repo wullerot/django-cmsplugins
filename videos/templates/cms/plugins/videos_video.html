@@ -1,0 +1,26 @@
+{% spaceless %}
+{% load thumbnail %}
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div class="plugin plugin-video{{ object.css_classes }}"{# object.data_tags #}>
+        {% if object.title %}
+            <h2>{{ object.title|linebreaksbr }}</h2>
+        {% endif %}
+        {% if object.video_embed_url %}
+            <div class="video-wrap">
+                <iframe class="video-iframe video-{{ object.video_type }}" src="{{ object.video_embed_url }}"{% if object.fullscreen %} allowfullscreen="allowfullscreen"{% endif %} frameborder="0"></iframe>
+            </div>
+        {% endif %}
+        {% if object.abstract or object.description %}
+            <div class="text">
+                {% if object.abstract %}
+                    <p class="abstract">{{ object.abstract|linebreaksbr }}</p>
+                {% endif %}
+                {% if object.description %}
+                    <div class="description">{{ object.description|linebreaks }}</div>
+                {% endif %}
+            </div>
+        {% endif %}
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+{% endspaceless %}

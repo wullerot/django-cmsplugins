@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-11 13:40+0200\n"
+"PO-Revision-Date: 2016-08-11 13:59+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:30 cms_plugins.py:61 conf.py:28
+msgid "content"
+msgstr "Inhalt"
+
+#: cms_plugins.py:31
+msgid "slider"
+msgstr "Slider"
+
+#: cms_plugins.py:62
+msgid "slide"
+msgstr "Slide"
+
+#: conf.py:11 conf.py:66
+msgid "none"
+msgstr "Keine"
+
+#: conf.py:32
+msgid "settings"
+msgstr "Einstellungen"
+
+#: conf.py:41 conf.py:100
+msgid "advanced settings"
+msgstr "Erweiterte Einstellungen"
+
+#: conf.py:51
+msgid "defined by css"
+msgstr "duch CSS definiert"
+
+#: conf.py:52
+msgid "full window height"
+msgstr "Fensterfüllend"
+
+#: conf.py:53
+#, python-format
+msgid "75% of window height"
+msgstr "75%  der Fensterhöhe"
+
+#: conf.py:54
+#, python-format
+msgid "50% of window height"
+msgstr "50%  der Fensterhöhe"
+
+#: conf.py:55
+#, python-format
+msgid "25% of window height"
+msgstr "25%  der Fensterhöhe"
+
+#: conf.py:56
+msgid "aspect ratio 16:9"
+msgstr "16:9 Seitenverhältnis"
+
+#: conf.py:57
+msgid "aspect ratio 2:1"
+msgstr "2:1 Seitenverhältnis"
+
+#: conf.py:58
+msgid "aspect ratio 4:1"
+msgstr "4:1 Seitenverhältnis"
+
+#: conf.py:83
+msgid "text"
+msgstr "Text"
+
+#: conf.py:93 models.py:85
+msgid "image"
+msgstr "Bild"
+
+#: conf.py:110 conf.py:123
+msgid "fade in"
+msgstr "Einblenden"
+
+#: conf.py:111
+msgid "bottom up"
+msgstr "Von unten nach oben"
+
+#: conf.py:112 conf.py:121
+msgid "left to right"
+msgstr "Von link snach rechts"
+
+#: conf.py:113 conf.py:122
+msgid "right to left"
+msgstr "Von rechts nach links"
+
+#: conf.py:114
+msgid "top down"
+msgstr "Von oben nach unten"
+
+#: conf.py:130
+msgid "light"
+msgstr "Hell"
+
+#: conf.py:131
+msgid "dark"
+msgstr "Dunkel"
+
+#: conf.py:138
+msgid "top left"
+msgstr "Oben links"
+
+#: conf.py:139
+msgid "top center"
+msgstr "Oben zentriert"
+
+#: conf.py:140
+msgid "top right"
+msgstr "Oben rechts"
+
+#: conf.py:141
+msgid "middle left"
+msgstr "Mitte links"
+
+#: conf.py:142
+msgid "middle center"
+msgstr "Mitte zentriert"
+
+#: conf.py:143
+msgid "middle right"
+msgstr "Mitte rechts"
+
+#: conf.py:144
+msgid "bottom left"
+msgstr "Unten links"
+
+#: conf.py:145
+msgid "bottom center"
+msgstr "Unten zentriert"
+
+#: conf.py:146
+msgid "bottom right"
+msgstr "Unten rechts"
+
+#: models.py:17
+msgid "in navigation"
+msgstr "im Menu anzeigen"
+
+#: models.py:18 models.py:70
+msgid "visible"
+msgstr "Plugin anzeigen"
+
+#: models.py:19
+msgid "size"
+msgstr "Grösse"
+
+#: models.py:22 models.py:71
+msgid "css class"
+msgstr "CSS Klasse"
+
+#: models.py:25 models.py:74
+msgid "title"
+msgstr "Titel"
+
+#: models.py:26
+msgid "display title"
+msgstr "Titel anzeigen"
+
+#: models.py:27
+msgid "slug"
+msgstr "Slug"
+
+#: models.py:29
+msgid "auto play"
+msgstr "Automatisch abspielen"
+
+#: models.py:30
+msgid "loop"
+msgstr "In Schleife abspielen"
+
+#: models.py:31
+msgid "show arrows"
+msgstr "Pfeile anzeigen"
+
+#: models.py:32
+msgid "show indicators"
+msgstr "Indikatoren anzeigen"
+
+#: models.py:75
+msgid "body"
+msgstr "Beschrieb"
+
+#: models.py:76
+msgid "text position"
+msgstr "Textposition"
+
+#: models.py:79
+msgid "text color"
+msgstr "Textfarbe"
+
+#: models.py:82
+msgid "text animation"
+msgstr "Textanimation"
+
+#: models.py:87
+msgid "image animation"
+msgstr "Bildanimation"

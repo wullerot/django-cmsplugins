@@ -1,0 +1,39 @@
+{% spaceless %}
+{% load i18n cms_tags %}
+
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div id="{{ object.slug }}" class="plugin plugin-slider{{ object.css_classes }}"{{ object.html_data }}>
+        {% if object.title %}
+            <h2>{{ object.tile|linebreaksbr }}</h2>
+        {% endif %}
+        <div class="slides">
+            {% for plugin in object.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+            {% if object.arrows %}
+            <div class="arrows">
+                <div class="arrow arrow-left">
+                    <svg role="img" class="svg-arrow svg-arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M12.452 4.516c.446.436.481 1.043 0 1.576L8.705 10l3.747 3.908c.481.533.446 1.141 0 1.574-.445.436-1.197.408-1.615 0-.418-.406-4.502-4.695-4.502-4.695a1.095 1.095 0 0 1 0-1.576s4.084-4.287 4.502-4.695c.418-.409 1.17-.436 1.615 0z"/>
+                    </svg>
+                </div>
+                <div class="arrow arrow-right">
+                    <svg role="img" class="svg-arrow svg-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.163 4.516c.418.408 4.502 4.695 4.502 4.695a1.095 1.095 0 0 1 0 1.576s-4.084 4.289-4.502 4.695c-.418.408-1.17.436-1.615 0-.446-.434-.481-1.041 0-1.574L11.295 10 7.548 6.092c-.481-.533-.446-1.141 0-1.576.445-.436 1.197-.409 1.615 0z"/>
+                    </svg>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% if object.indicators %}
+            <div class="indicators">
+                {% for plugin in object.child_plugin_instances %}
+                    <span class="indicator" data-index="{{ forloop.counter0 }}">{{ plugin }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+
+{% endspaceless %}

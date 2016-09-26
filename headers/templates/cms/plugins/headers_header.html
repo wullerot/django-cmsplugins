@@ -1,0 +1,26 @@
+{% spaceless %}
+{% load thumbnail %}
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div id="{{ object.slug }}" class="plugin plugin-header{{ object.css_classes }}">
+        {% if object.image %}
+            {% thumbnail object.image 4000x4000 as thumb %}
+            <div class="bg-image" style="background-image: url({{ thumb.url }});">
+        {% endif %}
+        </div>
+        {% if object.title or object.abstract or object.description %}
+            <div class="text">
+                {% if object.title %}
+                    <span class="title">{{ object.title|linebreaksbr }}</span>
+                {% endif %}
+                {% if object.abstract %}
+                    <span class="abstract">{{ object.abstract|linebreaksbr }}</span>
+                {% endif %}
+                {% if object.description %}
+                    <span class="description">{{ object.description|linebreaksbr }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+{% endspaceless %}

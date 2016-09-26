@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-10 14:26+0200\n"
+"PO-Revision-Date: 2016-08-10 14:37+0200\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: cms_plugins.py:31 cms_plugins.py:63
+msgid "layout"
+msgstr "Layout"
+
+#: cms_plugins.py:32
+msgid "section with columns"
+msgstr "Column section"
+
+#: cms_plugins.py:64
+msgid "column"
+msgstr "Column"
+
+#: conf.py:11
+msgid "none"
+msgstr "None"
+
+#: conf.py:28 conf.py:70
+msgid "settings"
+msgstr "Settings"
+
+#: conf.py:43
+msgid "100%"
+msgstr "100%"
+
+#: conf.py:44
+msgid "80%"
+msgstr "80%"
+
+#: conf.py:45
+msgid "75%"
+msgstr "75%"
+
+#: conf.py:46
+msgid "66%"
+msgstr "66%"
+
+#: conf.py:47
+msgid "60%"
+msgstr "60%"
+
+#: conf.py:48
+msgid "50%"
+msgstr "50%"
+
+#: conf.py:49
+msgid "40%"
+msgstr "40%"
+
+#: conf.py:50
+msgid "33%"
+msgstr "33%"
+
+#: conf.py:51
+msgid "25%"
+msgstr "25%"
+
+#: conf.py:52
+msgid "20%"
+msgstr "20%"
+
+#: conf.py:74
+msgid "title"
+msgstr "Title"
+
+#: conf.py:78
+msgid "icon"
+msgstr "Icon"
+
+#: conf.py:82
+msgid "design"
+msgstr "Design"
+
+#: models.py:17
+msgid "visible"
+msgstr "Display plugin"
+
+#: models.py:18
+msgid "width"
+msgstr "Width"
+
+#: models.py:20
+msgid "css class"
+msgstr "CSS class"
+
+#~ msgid "section"
+#~ msgstr "section"
+
+#~ msgid "---"
+#~ msgstr "---"
+
+#~ msgid "dark"
+#~ msgstr "dark"
+
+#~ msgid "light"
+#~ msgstr "light"
+
+#~ msgid "in navigation"
+#~ msgstr "display in navigation"
+
+#~ msgid "display title"
+#~ msgstr "display title on page"
+
+#~ msgid "slug"
+#~ msgstr "slug"
+
+#~ msgid "background color"
+#~ msgstr "background color"

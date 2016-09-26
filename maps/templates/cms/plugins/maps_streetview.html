@@ -1,0 +1,12 @@
+{% spaceless %}
+{% if object.is_visible or request.toolbar.edit_mode %}
+    <div class="plugin plugin-streetview{{ object.css_classes }}">
+        <span class="hidden google-apikey" data-apikey="{{ object.browser_apikey }}"></span>
+        {% if object.title %}
+            <h2>{{ object.title|linebreaksbr }}</h2>
+        {% endif %}
+        <div id="googlemap-{{ object.pk }}" class="view" {{ object.data_tags }}></div>
+        {{ indicator_hidden }}
+    </div>
+{% endif %}
+{% endspaceless %}
