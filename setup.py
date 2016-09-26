@@ -1,17 +1,17 @@
 from setuptools import setup, find_packages
 import os
 
-version = __import__('text_ckeditor').__version__
-
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+
 DESCRIPTION = 'Django CMS plugin collection'
+
 
 setup(
     name="django-cms-plugins",
-    version=version,
+    version='0.1.2',
     url='http://github.com/rouxcode/django-cms-plugins',
     license='MIT',
     platforms=['OS Independent'],
@@ -25,7 +25,7 @@ setup(
         'Django>=1.8,<1.10',
         'django-cms>=3.3.2,<3.5',
         'django-filer>=1.2.0,<1.3',
-        'google>=2.4.4',
+        'googlemaps>=2.4.4',
         'lxml>=3.6.4',
     ),
     include_package_data=True,
