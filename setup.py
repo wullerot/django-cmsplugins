@@ -2,20 +2,14 @@ from setuptools import setup, find_packages
 import os
 
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
-
-DESCRIPTION = 'Django CMS plugin collection'
-
 
 setup(
     name="django-cms-plugins",
-    version='0.1.2',
+    version='0.1.3',
     url='http://github.com/rouxcode/django-cms-plugins',
     license='MIT',
     platforms=['OS Independent'],
-    description=DESCRIPTION,
+    description='Django CMS plugin collection',
     long_description=read('README.rst'),
     author=u'Alaric Maegerle',
     author_email='info@rouxcode.ch',
