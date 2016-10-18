@@ -47,7 +47,7 @@ class BasePlugin(CMSPlugin):
         if self.width:
             classes.append(self.width)
         if self.css_class:
-            classes.append(self.css_classes)
+            classes.append(self.css_class)
         if classes:
             return ' {0}'.format(' '.join(classes))
         else:
