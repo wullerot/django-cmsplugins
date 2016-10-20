@@ -15,4 +15,4 @@ def get_indicator_hidden(request, instance):
 
 
 def get_str_from_tuple(key='', properties=()):
-    return dict((k, v) for k, v in properties).get(key)
+    return dict((k, v) for k, v in properties).get(key, '')
