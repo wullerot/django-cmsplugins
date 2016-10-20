@@ -6,6 +6,11 @@ from django.utils.translation import ugettext_lazy as _
 from baseplugin import defaults
 
 
+COLUMN_BACKGROUND_COLORS = getattr(
+    settings,
+    'COLUMNS_COLUMN_BACKGROUND_COLORS',
+    defaults.BACKGROUND_COLORS
+)
 COLUMN_CSS_CLASSES = getattr(
     settings,
     'COLUMNS_COLUMN_CSS_CLASSES',
