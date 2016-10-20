@@ -17,10 +17,10 @@ class WrapPluginForm(forms.ModelForm):
         fields = conf.WRAP_FIELDS
         model = Wrap
         widgets = {
-            'bg_color': forms.RadioSelect(
+            'bg_color': forms.Select(
                 choices=conf.WRAP_BACKGROUND_COLORS
             ),
-            'css_class': forms.RadioSelect(
+            'css_class': forms.Select(
                 choices=conf.WRAP_CSS_CLASSES
             ),
             'height': forms.Select(

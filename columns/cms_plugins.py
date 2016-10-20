@@ -21,14 +21,17 @@ class ColumnPluginForm(forms.ModelForm):
         model = Column
         fields = conf.COLUMN_FIELDS
         widgets = {
-            'css_class': forms.Select(
-                choices=conf.COLUMN_CSS_CLASSES,
+            'bg_color': forms.Select(
+                choices=conf.WRAP_BACKGROUND_COLORS
             ),
-            'height': forms.RadioSelect(
-                choices=conf.COLUMN_HEIGHTS,
+            'css_class': forms.Select(
+                choices=conf.WRAP_CSS_CLASSES
+            ),
+            'height': forms.Select(
+                choices=conf.WRAP_HEIGHTS
             ),
             'width': forms.RadioSelect(
-                choices=conf.COLUMN_WIDTHS,
+                choices=conf.WRAP_WIDTHS
             ),
         }
 

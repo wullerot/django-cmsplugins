@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
     name="django-cms-plugins",
-    version='0.1.6',
+    version='0.1.7',
     url='http://github.com/rouxcode/django-cms-plugins',
     license='MIT',
     platforms=['OS Independent'],
