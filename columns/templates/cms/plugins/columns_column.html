@@ -2,7 +2,7 @@
 {% load cms_tags %}
 
 {% if object.is_visible or request.toolbar.edit_mode %}
-    <div class="plugin plugin-column{{ object.css_classes }}">
+    <div id="{{ object.slug }}" class="plugin plugin-column{{ object.css_classes }}"{{ object.html_style }}>
         {% if object.title %}
             <h2 class="title">{{ object.title|linebreaksbr }}</h2>
         {% endif %}
