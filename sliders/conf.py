@@ -166,3 +166,35 @@ SLIDERSLIDE_TEXT_POSITIONS = getattr(
         ('text-bottom-right', _('bottom right')),
     )
 )
+
+SLIDER_LINK_MODEL = getattr(
+    settings,
+    'SLIDERS_SLIDER_LINK_MODEL',
+    'sliders.models.Link'
+)
+SLIDER_INLINES = getattr(
+    settings,
+    'SLIDERS_SLIDER_INLINES',
+    []  # ['sliders.cms_plugins.SliderLinkInline']
+)
+SLIDER_LINK_FIELDS = getattr(
+    settings,
+    'SLIDERS_SLIDER_LINK_FIELDS',
+    ['name', 'abstract', 'cms_page', 'filer_file', 'email']
+)
+
+SLIDE_LINK_MODEL = getattr(
+    settings,
+    'SLIDERS_SLIDE_LINK_MODEL',
+    'sliders.models.Link'
+)
+SLIDE_INLINES = getattr(
+    settings,
+    'SLIDERS_SLIDE_INLINES',
+    ['sliders.cms_plugins.SlideLinkInline']
+)
+SLIDE_LINK_FIELDS = getattr(
+    settings,
+    'SLIDERS_SLIDER_LINK_FIELDS',
+    SLIDER_LINK_FIELDS
+)

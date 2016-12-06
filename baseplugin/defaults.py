@@ -4,6 +4,11 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
 
+LINK_MODEL = getattr(
+    settings,
+    'BASEPLUGIN_LINK_MODEL',
+    'baseplugin.models.BaseLink'
+)
 CSS_CLASSES = getattr(
     settings,
     'BASEPLUGIN_CSS_CLASSES',

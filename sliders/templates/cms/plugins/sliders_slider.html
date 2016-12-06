@@ -32,6 +32,12 @@
                 {% endfor %}
             </div>
         {% endif %}
+        {% if object.link %}
+            <a class="slider-link" href="{{ object.link.href }}" title="{{ object.link.name }}"{{ object.link.target_tag }}>
+                <h3>{{ object.link.name }}</h3>
+                {% if object.link.abstract %}{{ object.link.abstract|linebreaks }}{% endif %}
+            </a>
+        {% endif %}
         {{ indicator_hidden }}
     </div>
 {% endif %}
