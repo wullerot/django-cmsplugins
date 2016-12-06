@@ -5,7 +5,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
-from cms.models import CMSPlugin
+from cms.models import CMSPlugin, Page
 
 
 @python_2_unicode_compatible
@@ -21,6 +21,7 @@ class BasePlugin(CMSPlugin):
     show_name = models.BooleanField(_('display title'), default=True)
     slug = models.SlugField(_('slug'), max_length=150, default='', blank=True,
                             editable=False)
+    cms_page = models.ForeignKey(Page, editable=False, null=True)
 
     class Meta:
         abstract = True
@@ -33,6 +34,8 @@ class BasePlugin(CMSPlugin):
         return '{0}{1}'.format(' '.join(self.name.splitlines()), hidden)
 
     def save(self, *args, **kwargs):
+        if self.page:
+            self.cms_page_id = self.page.id
         if self.name:
             self.slug = '{0}'.format(slugify(self.name))
         else:
