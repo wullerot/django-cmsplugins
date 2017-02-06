@@ -26,16 +26,6 @@ WRAP_WIDTHS = getattr(
     'SECTIONS_WRAP_WIDTHS',
     defaults.WIDTHS
 )
-WRAP_EXCLUDE = getattr(
-    settings,
-    'SECTIONS_WRAP_EXCLUDE',
-    []
-)
-WRAP_FIELDS = getattr(
-    settings,
-    'SECTIONS_WRAP_FIELDS',
-    '__all__'
-)
 WRAP_FIELDSETS = getattr(
     settings,
     'SECTIONS_WRAP_FIELDSETS',

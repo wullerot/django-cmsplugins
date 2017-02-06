@@ -13,13 +13,13 @@ from .models import GoogleMap
 
 class GoogleMapPluginForm(forms.ModelForm):
     class Meta:
-        fields = conf.GOOGLEMAP_FIELDS
+        fields = '__all__'
         model = GoogleMap
         widgets = {
             'css_class': forms.Select(
                 choices=conf.GOOGLEMAP_CSS_CLASSES,
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 choices=conf.GOOGLEMAP_HEIGHTS,
             ),
             'info_content': forms.Textarea(
@@ -28,7 +28,7 @@ class GoogleMapPluginForm(forms.ModelForm):
             'map_type': forms.Select(
                 choices=conf.GOOGLEMAP_TYPES,
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 choices=conf.GOOGLEMAP_WIDTHS,
             ),
             'zoom': forms.Select(
@@ -38,7 +38,6 @@ class GoogleMapPluginForm(forms.ModelForm):
 
 
 class GoogleMapPlugin(CMSPluginBase):
-    exclude = conf.GOOGLEMAP_EXCLUDE
     fieldsets = conf.GOOGLEMAP_FIELDSETS
     form = GoogleMapPluginForm
     model = GoogleMap
@@ -60,26 +59,25 @@ plugin_pool.register_plugin(GoogleMapPlugin)
 
 class StreetViewPluginForm(forms.ModelForm):
     class Meta:
-        fields = conf.STREETVIEW_FIELDS
+        fields = '__all__'
         model = GoogleMap
         widgets = {
             'css_class': forms.Select(
                 choices=conf.STREETVIEW_CSS_CLASSES,
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 choices=conf.STREETVIEW_HEIGHTS,
             ),
             'info_content': forms.Textarea(
                 attrs={'rows': 4}
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 choices=conf.STREETVIEW_WIDTHS,
             ),
         }
 
 
 class StreetViewPlugin(CMSPluginBase):
-    exclude = conf.STREETVIEW_EXCLUDE
     fieldsets = conf.STREETVIEW_FIELDSETS
     form = StreetViewPluginForm
     model = GoogleMap

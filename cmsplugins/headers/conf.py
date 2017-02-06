@@ -11,16 +11,6 @@ HEADER_CSS_CLASSES = getattr(
     'HEADERS_HEADER_CSS_CLASSES',
     defaults.CSS_CLASSES
 )
-HEADER_EXCLUDE = getattr(
-    settings,
-    'HEADERS_HEADER_EXCLUDE',
-    []
-)
-HEADER_FIELDS = getattr(
-    settings,
-    'HEADERS_HEADER_FIELDS',
-    '__all__'
-)
 HEADER_FIELDSETS = getattr(
     settings,
     'HEADERS_HEADER_FIELDSETS',

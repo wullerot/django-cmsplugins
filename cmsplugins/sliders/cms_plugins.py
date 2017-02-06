@@ -54,10 +54,10 @@ class SliderPluginForm(forms.ModelForm):
             'css_class': forms.Select(
                 choices=conf.SLIDER_CSS_CLASSES
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 choices=conf.SLIDER_HEIGHTS,
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 choices=conf.SLIDER_WIDTHS,
             ),
         }
@@ -101,7 +101,7 @@ class SliderSlidePluginForm(forms.ModelForm):
             'description': forms.Textarea(
                 attrs={'rows': 4}
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 choices=conf.SLIDERSLIDE_HEIGHTS,
             ),
             'image_animation': forms.Select(
@@ -119,7 +119,7 @@ class SliderSlidePluginForm(forms.ModelForm):
             'text_position': forms.Select(
                 choices=conf.SLIDERSLIDE_TEXT_POSITIONS,
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 choices=conf.SLIDERSLIDE_WIDTHS,
             ),
         }

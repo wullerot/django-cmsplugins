@@ -14,7 +14,7 @@ from .models import Header
 class HeaderPluginForm(forms.ModelForm):
     class Meta:
         model = Header
-        fields = conf.HEADER_FIELDS
+        fields = '__all__'
         widgets = {
             'abstract': forms.Textarea(
                 attrs={'rows': 4}
@@ -25,7 +25,7 @@ class HeaderPluginForm(forms.ModelForm):
             'description': forms.Textarea(
                 attrs={'rows': 8}
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 attrs={'class': 'width'},
                 choices=conf.HEADER_HEIGHTS,
             ),
@@ -38,7 +38,7 @@ class HeaderPluginForm(forms.ModelForm):
             'text_position': forms.Select(
                 choices=conf.HEADER_TEXT_POSITIONS,
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 attrs={'class': 'width'},
                 choices=conf.HEADER_WIDTHS,
             ),
@@ -46,7 +46,6 @@ class HeaderPluginForm(forms.ModelForm):
 
 
 class HeaderPlugin(CMSPluginBase):
-    exclude = conf.HEADER_EXCLUDE
     fieldsets = conf.HEADER_FIELDSETS
     form = HeaderPluginForm
     model = Header

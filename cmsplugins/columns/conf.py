@@ -26,23 +26,16 @@ COLUMN_WIDTHS = getattr(
     'COLUMNS_COLUMN_WIDTHS',
     defaults.WIDTHS
 )
-COLUMN_EXCLUDE = getattr(
-    settings,
-    'COLUMNS_COLUMN_EXCLUDE',
-    []
-)
-COLUMN_FIELDS = getattr(
-    settings,
-    'COLUMNS_COLUMN_FIELDS',
-    '__all__'
-)
 COLUMN_FIELDSETS = getattr(
     settings,
     'COLUMNS_COLUMN_FIELDSETS',
     (
         (_('settings'), {
             'classes': ['section', 'settings'],
-            'fields': ['width', 'css_class', 'is_visible'],
+            'fields': [
+                'width',
+                'css_class',
+            ],
         }),
     )
 )

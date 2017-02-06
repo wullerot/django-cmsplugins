@@ -14,7 +14,7 @@ from .models import Video
 class VideoPluginForm(forms.ModelForm):
     class Meta:
         model = Video
-        fields = conf.VIDEO_FIELDS
+        fields = '__all__'
         widgets = {
             'abstract': forms.Textarea(
                 attrs={'class': 'abstract', 'rows': 4}
@@ -40,7 +40,6 @@ class VideoPluginForm(forms.ModelForm):
 
 
 class VideoPlugin(CMSPluginBase):
-    exclude = conf.VIDEO_EXCLUDE
     fieldsets = conf.VIDEO_FIELDSETS
     form = VideoPluginForm
     model = Video

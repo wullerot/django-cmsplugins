@@ -36,16 +36,6 @@ GOOGLEMAP_CSS_CLASSES = getattr(
     'MAPS_GOOGLEMAP_CSS_CLASSES',
     defaults.CSS_CLASSES
 )
-GOOGLEMAP_EXCLUDE = getattr(
-    settings,
-    'MAPS_GOOGLEMAP_EXCLUDE',
-    []
-)
-GOOGLEMAP_FIELDS = getattr(
-    settings,
-    'MAPS_GOOGLEMAP_FIELDS',
-    '__all__'
-)
 GOOGLEMAP_FIELDSETS = getattr(
     settings,
     'MAPS_GOOGLEMAP_FIELDSETS',
@@ -129,16 +119,6 @@ STREETVIEW_CSS_CLASSES = getattr(
     settings,
     'MAPS_STREETVIEW_CSS_CLASSES',
     defaults.CSS_CLASSES
-)
-STREETVIEW_EXCLUDE = getattr(
-    settings,
-    'MAPS_STREETVIEW_EXCLUDE',
-    []
-)
-STREETVIEW_FIELDS = getattr(
-    settings,
-    'MAPS_STREETVIEW_FIELDS',
-    '__all__'
 )
 STREETVIEW_FIELDSETS = getattr(
     settings,

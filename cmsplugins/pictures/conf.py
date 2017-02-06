@@ -21,16 +21,6 @@ GALLERY_WIDTHS = getattr(
     'PICTURES_GALLERY_WIDTHS',
     defaults.WIDTHS
 )
-GALLERY_EXCLUDE = getattr(
-    settings,
-    'PICTURES_GALLERY_EXCLUDE',
-    []
-)
-GALLERY_FIELDS = getattr(
-    settings,
-    'PICTURES_GALLERY_FIELDS',
-    '__all__'
-)
 GALLERY_FIELDSETS = getattr(
     settings,
     'PICTURES_GALLERY_FIELDSETS',
@@ -79,16 +69,6 @@ GALLERYPICTURE_WIDTHS = getattr(
     'PICTURES_GALLERYPICTURE_WIDTHS',
     defaults.WIDTHS
 )
-GALLERYPICTURE_EXCLUDE = getattr(
-    settings,
-    'PICTURES_GALLERYPICTURE_EXCLUDE',
-    []
-)
-GALLERYPICTURE_FIELDS = getattr(
-    settings,
-    'PICTURES_GALLERYPICTURE_FIELDS',
-    '__all__'
-)
 GALLERYPICTURE_FIELDSETS = getattr(
     settings,
     'PICTURES_GALLERYPICTURE_FIELDSETS',
@@ -128,16 +108,6 @@ PICTURE_WIDTHS = getattr(
     settings,
     'PICTURES_PICTURE_WIDTHS',
     defaults.WIDTHS
-)
-PICTURE_EXCLUDE = getattr(
-    settings,
-    'PICTURES_PICTURE_EXCLUDE',
-    []
-)
-PICTURE_FIELDS = getattr(
-    settings,
-    'PICTURES_PICTURE_FIELDS',
-    '__all__'
 )
 PICTURE_FIELDSETS = getattr(
     settings,

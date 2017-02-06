@@ -14,7 +14,7 @@ from .models import Wrap
 
 class WrapPluginForm(forms.ModelForm):
     class Meta:
-        fields = conf.WRAP_FIELDS
+        fields = '__all__'
         model = Wrap
         widgets = {
             'bg_color': forms.Select(
@@ -26,7 +26,7 @@ class WrapPluginForm(forms.ModelForm):
             'height': forms.Select(
                 choices=conf.WRAP_HEIGHTS
             ),
-            'html_tag': forms.RadioSelect(
+            'html_tag': forms.Select(
                 choices=conf.WRAP_HTML_TAGS
             ),
             'width': forms.Select(
@@ -38,7 +38,6 @@ class WrapPluginForm(forms.ModelForm):
 class WrapPlugin(CMSPluginBase):
     allow_children = True
     child_classes = conf.WRAP_PLUGINS
-    exclude = conf.WRAP_EXCLUDE
     fieldsets = conf.WRAP_FIELDSETS
     form = WrapPluginForm
     model = Wrap

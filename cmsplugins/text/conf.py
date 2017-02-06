@@ -21,16 +21,6 @@ CKEDITOR_WIDTHS = getattr(
     'TEXT_CKEDITOR_WIDTHS',
     defaults.WIDTHS
 )
-CKEDITOR_EXCLUDE = getattr(
-    settings,
-    'TEXT_CKEDITOR_EXCLUDE',
-    []
-)
-CKEDITOR_FIELDS = getattr(
-    settings,
-    'TEXT_CKEDITOR_FIELDS',
-    '__all__'
-)
 CKEDITOR_FIELDSETS = getattr(
     settings,
     'TEXT_CKEDITOR_FIELDSETS',
@@ -56,16 +46,6 @@ TEXT_WIDTHS = getattr(
     settings,
     'TEXT_TEXT_WIDTHS',
     defaults.WIDTHS
-)
-TEXT_EXCLUDE = getattr(
-    settings,
-    'TEXT_TEXT_EXCLUDE',
-    []
-)
-TEXT_FIELDS = getattr(
-    settings,
-    'TEXT_TEXT_FIELDS',
-    '__all__'
 )
 TEXT_FIELDSETS = getattr(
     settings,
@@ -93,16 +73,6 @@ TITLE_WIDTHS = getattr(
     settings,
     'TEXT_TITLE_WIDTHS',
     defaults.WIDTHS
-)
-TITLE_EXCLUDE = getattr(
-    settings,
-    'TEXT_TITLE_EXCLUDE',
-    []
-)
-TITLE_FIELDS = getattr(
-    settings,
-    'TEXT_TITLE_FIELDS',
-    '__all__'
 )
 TITLE_FIELDSETS = getattr(
     settings,

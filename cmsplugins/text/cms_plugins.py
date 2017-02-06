@@ -13,7 +13,7 @@ from .models import Text
 
 class TextCKEditorPluginForm(forms.ModelForm):
     class Meta:
-        fields = conf.CKEDITOR_FIELDS
+        fields = '__all__'
         model = Text
         widgets = {
             'body': CKEditorWidget(
@@ -22,17 +22,16 @@ class TextCKEditorPluginForm(forms.ModelForm):
             'css_class': forms.Select(
                 choices=conf.CKEDITOR_CSS_CLASSES,
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 choices=conf.CKEDITOR_HEIGHTS,
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 choices=conf.CKEDITOR_WIDTHS,
             ),
         }
 
 
 class TextCKEditorPlugin(CMSPluginBase):
-    exclude = conf.CKEDITOR_EXCLUDE
     fieldsets = conf.CKEDITOR_FIELDSETS
     form = TextCKEditorPluginForm
     model = Text
@@ -49,7 +48,7 @@ plugin_pool.register_plugin(TextCKEditorPlugin)
 
 class TextPluginForm(forms.ModelForm):
     class Meta:
-        fields = conf.TEXT_FIELDS
+        fields = '__all__'
         model = Text
         widgets = {
             'body': forms.Textarea(
@@ -58,17 +57,16 @@ class TextPluginForm(forms.ModelForm):
             'css_class': forms.Select(
                 choices=conf.TEXT_CSS_CLASSES,
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 choices=conf.TEXT_HEIGHTS,
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 choices=conf.TEXT_WIDTHS,
             ),
         }
 
 
 class TextPlugin(CMSPluginBase):
-    exclude = conf.TEXT_EXCLUDE
     fieldsets = conf.TEXT_FIELDSETS
     form = TextPluginForm
     model = Text
@@ -85,7 +83,7 @@ plugin_pool.register_plugin(TextPlugin)
 
 class TitlePluginForm(forms.ModelForm):
     class Meta:
-        fields = conf.TITLE_FIELDS
+        fields = '__all__'
         model = Text
         widgets = {
             'body': forms.Textarea(
@@ -94,17 +92,16 @@ class TitlePluginForm(forms.ModelForm):
             'css_class': forms.Select(
                 choices=conf.TITLE_CSS_CLASSES,
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 choices=conf.TITLE_HEIGHTS,
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 choices=conf.TITLE_WIDTHS,
             ),
         }
 
 
 class TitlePlugin(CMSPluginBase):
-    exclude = conf.TITLE_EXCLUDE
     fieldsets = conf.TITLE_FIELDSETS
     form = TitlePluginForm
     model = Text

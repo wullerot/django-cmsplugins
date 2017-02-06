@@ -21,16 +21,6 @@ IFRAME_WIDTHS = getattr(
     'IFRAMES_IFRAME_WIDTHS',
     defaults.WIDTHS
 )
-IFRAME_EXCLUDE = getattr(
-    settings,
-    'IFRAMES_IFRAME_EXCLUDE',
-    []
-)
-IFRAME_FIELDS = getattr(
-    settings,
-    'IFRAMES_IFRAME_FIELDS',
-    '__all__'
-)
 IFRAME_FIELDSETS = getattr(
     settings,
     'IFRAMES_IFRAME_FIELDSETS',

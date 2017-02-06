@@ -13,7 +13,7 @@ from .models import Picture, Gallery
 
 class GalleryPluginForm(forms.ModelForm):
     class Meta:
-        fields = conf.GALLERY_FIELDS
+        fields = '__all__'
         model = Gallery
         widgets = {
             'abstract': forms.Textarea(
@@ -41,7 +41,6 @@ class GalleryPluginForm(forms.ModelForm):
 class GalleryPlugin(CMSPluginBase):
     allow_children = True
     child_classes = conf.GALLERY_PLUGINS
-    exclude = conf.GALLERY_EXCLUDE
     fieldsets = conf.GALLERY_FIELDSETS
     form = GalleryPluginForm
     model = Gallery
@@ -64,7 +63,7 @@ plugin_pool.register_plugin(GalleryPlugin)
 class GalleryPicturePluginForm(forms.ModelForm):
     # TODO check if name is empty
     class Meta:
-        fields = conf.GALLERYPICTURE_FIELDS
+        fields = '__all__'
         model = Picture
         widgets = {
             'abstract': forms.Textarea(
@@ -87,7 +86,6 @@ class GalleryPicturePluginForm(forms.ModelForm):
 
 
 class GalleryPicturePlugin(CMSPluginBase):
-    exclude = conf.GALLERYPICTURE_EXCLUDE
     fieldsets = conf.GALLERYPICTURE_FIELDSETS
     form = GalleryPicturePluginForm
     model = Picture
@@ -110,7 +108,7 @@ plugin_pool.register_plugin(GalleryPicturePlugin)
 class PicturePluginForm(forms.ModelForm):
     # TODO check if name is empty
     class Meta:
-        fields = conf.PICTURE_FIELDS
+        fields = '__all__'
         model = Picture
         widgets = {
             'abstract': forms.Textarea(
@@ -133,7 +131,6 @@ class PicturePluginForm(forms.ModelForm):
 
 
 class PicturePlugin(CMSPluginBase):
-    exclude = conf.PICTURE_EXCLUDE
     fieldsets = conf.PICTURE_FIELDSETS
     form = PicturePluginForm
     model = Picture

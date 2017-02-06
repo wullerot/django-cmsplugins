@@ -14,12 +14,12 @@ from .models import IFrame
 class IFramePluginForm(forms.ModelForm):
     class Meta:
         model = IFrame
-        fields = conf.IFRAME_FIELDS
+        fields = '__all__'
         widgets = {
             'css_class': forms.Select(
                 choices=conf.IFRAME_CSS_CLASSES,
             ),
-            'height': forms.RadioSelect(
+            'height': forms.Select(
                 attrs={'class': 'width'},
                 choices=conf.IFRAME_HEIGHTS,
             ),
@@ -29,7 +29,7 @@ class IFramePluginForm(forms.ModelForm):
             'name': forms.Textarea(
                 attrs={'rows': 2}
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 attrs={'class': 'width'},
                 choices=conf.IFRAME_WIDTHS,
             ),
@@ -37,7 +37,6 @@ class IFramePluginForm(forms.ModelForm):
 
 
 class IFramePlugin(CMSPluginBase):
-    exclude = conf.IFRAME_EXCLUDE
     fieldsets = conf.IFRAME_FIELDSETS
     form = IFramePluginForm
     model = IFrame

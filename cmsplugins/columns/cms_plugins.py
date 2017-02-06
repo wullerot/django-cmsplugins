@@ -8,8 +8,6 @@ from cms.models import CMSPlugin
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 
-from cmsplugins.sections.cms_plugins import WrapPluginForm, WrapPlugin
-from cmsplugins.sections.models import Wrap
 from cmsplugins.baseplugin.utils import get_indicator_hidden
 
 from . import conf
@@ -19,7 +17,7 @@ from .models import Column
 class ColumnPluginForm(forms.ModelForm):
     class Meta:
         model = Column
-        fields = conf.COLUMN_FIELDS
+        fields = '__all__'
         widgets = {
             'bg_color': forms.Select(
                 choices=conf.COLUMN_BACKGROUND_COLORS
@@ -30,7 +28,7 @@ class ColumnPluginForm(forms.ModelForm):
             'height': forms.Select(
                 choices=conf.COLUMN_HEIGHTS
             ),
-            'width': forms.RadioSelect(
+            'width': forms.Select(
                 choices=conf.COLUMN_WIDTHS
             ),
         }
@@ -39,7 +37,6 @@ class ColumnPluginForm(forms.ModelForm):
 class ColumnPlugin(CMSPluginBase):
     allow_children = True
     child_classes = conf.COLUMN_PLUGINS
-    exclude = conf.COLUMN_EXCLUDE
     fieldsets = conf.COLUMN_FIELDSETS
     form = ColumnPluginForm
     model = Column
