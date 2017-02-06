@@ -7,3 +7,4 @@ CMS Plugins for rouxcode & e621
 Requirements
 ************
 django >= 1.8
+django-cms >= 3.4

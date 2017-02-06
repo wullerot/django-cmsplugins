@@ -1,12 +1,14 @@
 from setuptools import setup, find_packages
 import os
 
+version = __import__('cmsplugins').__version__
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
     name="django-cms-plugins",
-    version='0.1.14',
+    version=version,
     url='http://github.com/rouxcode/django-cms-plugins',
     license='MIT',
     platforms=['OS Independent'],
@@ -17,11 +19,11 @@ setup(
     packages=find_packages(),
     install_requires=(
         'cssselect>=0.9.2',
-        'Django>=1.8,<1.10',
+        'Django>=1.8,<1.11',
         'django-cms>=3.3.2,<3.5',
         'django-filer>=1.2.0,<1.3',
-        'googlemaps>=2.4.4',
-        'lxml>=3.6.4',
+        'googlemaps>=2.4.4,<2.5',
+        'lxml>=3.6.4,<3.7',
     ),
     include_package_data=True,
     zip_safe=False,
