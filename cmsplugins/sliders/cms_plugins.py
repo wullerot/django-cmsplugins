@@ -69,7 +69,7 @@ class SliderPlugin(CMSPluginBase):
     exclude = conf.SLIDER_EXCLUDE
     fieldsets = conf.SLIDER_FIELDSETS
     form = SliderPluginForm
-    inlines = [load_object(i) for i in conf.SLIDE_INLINES]
+    inlines = [load_object(i) for i in conf.SLIDER_INLINES]
     model = Slider
     module = _('content')
     name = _('slider')
