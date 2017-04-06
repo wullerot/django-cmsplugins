@@ -83,6 +83,13 @@ class Slide(BasePlugin):
             link.pk = None
             link.plugin_id = self.id
             link.save()
+        if hasattr(self, 'slide_link'):
+            self.slide_link.delete()
+        if hasattr(draft, 'slide_link'):
+            link = draft.slide_link
+            link.pk = None
+            link.plugin_id = self.id
+            link.save()
 
     @property
     def css_classes(self):
