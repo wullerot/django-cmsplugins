@@ -109,7 +109,7 @@ class GoogleMap(BasePlugin):
                 data['data-info'] = '<br>'.join(lines)
             else:
                 info = ('<strong>{0}</strong><br>'
-                        '{1}<br>{2} {3}<br>').format(self.title,
+                        '{1}<br>{2} {3}<br>').format(self.name,
                                                             self.address,
                                                             self.zipcode,
                                                             self.city)
