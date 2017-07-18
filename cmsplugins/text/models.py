@@ -14,7 +14,10 @@ class Text(BasePlugin):
     Plain Text Plugin
     """
 
-    body = models.TextField(_('body'), default='')
+    body = models.TextField(
+        default='',
+        verbose_name=_('body'),
+    )
 
     def __str__(self):
         string = strip_tags(' '.join(self.body.splitlines()))

@@ -26,11 +26,32 @@ CKEDITOR_FIELDSETS = getattr(
     'TEXT_CKEDITOR_FIELDSETS',
     [
         (_('content'), {
-            'classes': ['section', 'content'],
+            'classes': ['section'],
             'fields': ['body'],
+        }),
+        (_('settings'), {
+            'classes': [
+                'section',
+                'collapse',
+            ],
+            'fields': [
+                'css_class',
+                'width',
+            ],
         }),
     ]
 )
+CKEDITOR_ALLOW_CHILDREN = getattr(
+    settings,
+    'TEXT_CKEDITOR_ALLOW_CHILDREN',
+    False
+)
+CKEDITOR_PLUGINS = getattr(
+    settings,
+    'TEXT_CKEDITOR_PLUGINS',
+    None
+)
+
 
 TEXT_CSS_CLASSES = getattr(
     settings,
@@ -52,10 +73,30 @@ TEXT_FIELDSETS = getattr(
     'TEXT_TEXT_FIELDSETS',
     [
         (_('content'), {
-            'classes': ['section', 'content'],
+            'classes': ['section'],
             'fields': ['body'],
         }),
+        (_('settings'), {
+            'classes': [
+                'section',
+                'collapse',
+            ],
+            'fields': [
+                'css_class',
+                'width',
+            ],
+        }),
     ]
+)
+TEXT_ALLOW_CHILDREN = getattr(
+    settings,
+    'TEXT_TEXT_ALLOW_CHILDREN',
+    False
+)
+TEXT_PLUGINS = getattr(
+    settings,
+    'TEXT_TEXT_PLUGINS',
+    None
 )
 
 
@@ -79,8 +120,28 @@ TITLE_FIELDSETS = getattr(
     'TEXT_TITLE_FIELDSETS',
     [
         (_('content'), {
-            'classes': ['section', 'content'],
+            'classes': ['section'],
             'fields': ['body'],
         }),
+        (_('settings'), {
+            'classes': [
+                'section',
+                'collapse',
+            ],
+            'fields': [
+                'css_class',
+                'width',
+            ],
+        }),
     ]
+)
+TITLE_ALLOW_CHILDREN = getattr(
+    settings,
+    'TEXT_TITLE_ALLOW_CHILDREN',
+    False
+)
+TITLE_PLUGINS = getattr(
+    settings,
+    'TEXT_TITLE_PLUGINS',
+    None
 )

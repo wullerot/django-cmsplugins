@@ -53,7 +53,10 @@ class Section(BasePlugin):
             )
         if self.css_class:
             names.append(
-                get_str_from_tuple(self.css_class, conf.SECTION_CSS_CLASSES)
+                get_str_from_tuple(
+                    self.css_class,
+                    conf.SECTION_CSS_CLASSES
+                )
             )
         if names:
             name = '{0} | {1}'.format(name, ' | '.join(names))

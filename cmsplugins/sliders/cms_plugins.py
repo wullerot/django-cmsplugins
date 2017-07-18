@@ -84,6 +84,7 @@ class SliderPlugin(CMSPluginBase):
         })
         return context
 
+
 plugin_pool.register_plugin(SliderPlugin)
 
 
@@ -144,5 +145,6 @@ class SliderSlidePlugin(CMSPluginBase):
             'indicator_hidden': get_indicator_hidden(request, instance),
         })
         return context
+
 
 plugin_pool.register_plugin(SliderSlidePlugin)

@@ -7,27 +7,61 @@ from django.utils.translation import ugettext_lazy as _
 from cmsplugins.baseplugin.models import BasePlugin
 from filer.fields.image import FilerImageField
 
-from . import conf
 from .utils import VideoMixin
 
 
 class Video(VideoMixin, BasePlugin):
-    autoplay = models.BooleanField(_('auto play'), default=False)
-    controls = models.BooleanField(_('show controls'), default=True,
-                                   help_text=_('only youtube'))
-    fullscreen = models.BooleanField(_('allow fullscreen'), default=True)
-    infos = models.BooleanField(_('show infos'), default=True)
-    loop = models.BooleanField(_('loop'), default=False)
-    mute = models.BooleanField(_('mute'), default=False)
-    abstract = models.TextField(_('abstract'), max_length=250, blank=True,
-                                default='')
-    description = models.TextField(_('description'), blank=True, default='')
-    video_url = models.URLField(_('video url'), null=True, blank=True,
-                                help_text=_('youtube & vimeo urls only'))
-    image = FilerImageField(verbose_name=_('image'), null=True, default=None,
-                            blank=True, on_delete=models.SET_NULL,
-                            related_name='+', help_text=_('placeholder image'))
-
+    autoplay = models.BooleanField(
+        default=False,
+        verbose_name=_('auto play'),
+    )
+    controls = models.BooleanField(
+        default=True,
+        help_text=_('only youtube'),
+        verbose_name=_('show controls'),
+    )
+    fullscreen = models.BooleanField(
+        default=True,
+        verbose_name=_('allow fullscreen'),
+    )
+    infos = models.BooleanField(
+        default=True,
+        verbose_name=_('show infos'),
+    )
+    loop = models.BooleanField(
+        default=False,
+        verbose_name=_('loop'),
+    )
+    mute = models.BooleanField(
+        default=False,
+        verbose_name=_('mute'),
+    )
+    abstract = models.TextField(
+        max_length=250,
+        blank=True,
+        default='',
+        verbose_name=_('abstract'),
+    )
+    description = models.TextField(
+        blank=True,
+        default='',
+        verbose_name=_('description'),
+    )
+    video_url = models.URLField(
+        null=True,
+        blank=True,
+        verbose_name=_('video url'),
+        help_text=_('youtube & vimeo urls only'),
+    )
+    image = FilerImageField(
+        null=True,
+        default=None,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name=_('image'),
+        help_text=_('placeholder image'),
+    )
 
     @property
     def data_tags(self):

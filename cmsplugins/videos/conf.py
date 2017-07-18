@@ -36,7 +36,7 @@ VIDEO_FIELDSETS = getattr(
     'VIDEOS_VIDEO_FIELDSETS',
     [
         (_('content'), {
-            'classes': ['section', 'content'],
+            'classes': ['section'],
             'fields': [
                 'name',
                 'video_url',
@@ -46,7 +46,7 @@ VIDEO_FIELDSETS = getattr(
             ],
         }),
         (_('settings'), {
-            'classes': ['section', 'settings'],
+            'classes': ['section'],
             'fields': [
                 # 'width',
                 'height',
@@ -59,7 +59,10 @@ VIDEO_FIELDSETS = getattr(
             ],
         }),
         (_('advanced settings'), {
-            'classes': ['section', 'settings-advanced'],
+            'classes': [
+                'section',
+                'collapse',
+            ],
             'fields': [
                 'show_name',
                 'is_visible',
@@ -69,14 +72,23 @@ VIDEO_FIELDSETS = getattr(
         }),
     ]
 )
-
+VIDEO_ALLOW_CHILDREN = getattr(
+    settings,
+    'VIDEOS_VIDEO_ALLOW_CHILDREN',
+    False
+)
+VIDEO_PLUGINS = getattr(
+    settings,
+    'VIDEOS_VIDEO_PLUGINS',
+    None
+)
 VIDEOS_RE_RULES = getattr(
     settings,
     'VIDEOS_RE_RULES',
     [
         r"^https?\:\/\/(www\.)?youtu\.be\/(?P<youtube_id>[^\/]*)\??.*$",
-        r"^https?\:\/\/(www\.)?youtube\.(com|nl|ru).*v=(?P<youtube_id>.*)\&?.*$",
-        r"^https?\:\/\/(www\.)?youtube\.(com|nl|ru)\/embed\/(?P<youtube_id>[^\/]*)\??.*$",
+        r"^https?\:\/\/(www\.)?youtube\.(com|nl|ru).*v=(?P<youtube_id>.*)\&?.*$",  # NOQA
+        r"^https?\:\/\/(www\.)?youtube\.(com|nl|ru)\/embed\/(?P<youtube_id>[^\/]*)\??.*$",  # NOQA
         r"^https?\:\/\/(www\.)?vimeo\.com\/(?P<vimeo_id>[^\/]*)\??.*$",
     ]
 )

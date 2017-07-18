@@ -40,6 +40,8 @@ class VideoPluginForm(forms.ModelForm):
 
 
 class VideoPlugin(CMSPluginBase):
+    allow_children = conf.VIDEO_ALLOW_CHILDREN
+    child_classes = conf.VIDEO_PLUGINS
     fieldsets = conf.VIDEO_FIELDSETS
     form = VideoPluginForm
     model = Video
@@ -55,5 +57,6 @@ class VideoPlugin(CMSPluginBase):
             'indicator_hidden': get_indicator_hidden(request, instance),
         })
         return context
+
 
 plugin_pool.register_plugin(VideoPlugin)

@@ -32,6 +32,8 @@ class TextCKEditorPluginForm(forms.ModelForm):
 
 
 class TextCKEditorPlugin(CMSPluginBase):
+    allow_children = conf.CKEDITOR_ALLOW_CHILDREN
+    child_classes = conf.CKEDITOR_PLUGINS
     fieldsets = conf.CKEDITOR_FIELDSETS
     form = TextCKEditorPluginForm
     model = Text
@@ -42,6 +44,7 @@ class TextCKEditorPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context.update({'object': instance, 'placeholder': placeholder})
         return context
+
 
 plugin_pool.register_plugin(TextCKEditorPlugin)
 
@@ -67,6 +70,8 @@ class TextPluginForm(forms.ModelForm):
 
 
 class TextPlugin(CMSPluginBase):
+    allow_children = conf.TEXT_ALLOW_CHILDREN
+    child_classes = conf.TEXT_PLUGINS
     fieldsets = conf.TEXT_FIELDSETS
     form = TextPluginForm
     model = Text
@@ -77,6 +82,7 @@ class TextPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context.update({'object': instance, 'placeholder': placeholder})
         return context
+
 
 plugin_pool.register_plugin(TextPlugin)
 
@@ -102,6 +108,8 @@ class TitlePluginForm(forms.ModelForm):
 
 
 class TitlePlugin(CMSPluginBase):
+    allow_children = conf.TITLE_ALLOW_CHILDREN
+    child_classes = conf.TITLE_PLUGINS
     fieldsets = conf.TITLE_FIELDSETS
     form = TitlePluginForm
     model = Text
@@ -112,5 +120,6 @@ class TitlePlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context.update({'object': instance, 'placeholder': placeholder})
         return context
+
 
 plugin_pool.register_plugin(TitlePlugin)
