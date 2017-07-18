@@ -10,7 +10,7 @@
         <img class="icon" src="{{ object.filer_icon.url }}" alt="{{ object.name }} {% trans 'icon' %}">
     {% endif %}
     {% if object.get_body %}
-    <div class="text">{{ object.get_body|linebreaksbr }}</div>
+        <div class="text">{{ object.get_body|linebreaksbr }}</div>
     {% endif %}
     {% if object.link_cms %}
         <a href="{{ object.link_cms.get_absolute_url }}" title="{{ object.link_cms }}">{% trans 'Mehr' %}</a>

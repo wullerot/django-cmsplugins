@@ -137,8 +137,8 @@ class Teaser(CMSPlugin):
                 return name_obj.name
 
     def get_body(self):
-        if self.name:
-            return self.name
+        if self.body:
+            return self.body
         elif self.link_cms:
             body_obj = self.get_page_info()
             if body_obj:
