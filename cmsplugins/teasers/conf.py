@@ -13,7 +13,7 @@ WRAP_PLUGINS = getattr(
     settings,
     'CMS_TEASERS_WRAP_PLUGINS',
     [
-        'PanelPlugin',
+        'TeaserPlugin',
     ]
 )
 WRAP_FIELDSETS = getattr(
@@ -65,12 +65,19 @@ TEASER_FIELDSETS = getattr(
     settings,
     'CMS_TEASERS_TEASER_FIELDSETS',
     [
-        (_('content'), {
+        (_('Page (auto content)'), {
+            'classes': ['section'],
+            'fields': [
+                'link_cms',
+            ],
+        }),
+        (_('Content'), {
             'classes': ['section'],
             'fields': [
                 'name',
-                'filer_icon',
                 'body',
+                'filer_image',
+                'filer_icon',
             ],
         }),
     ]
@@ -87,11 +94,16 @@ TEASER_PLUGINS = getattr(
 )
 TEASER_LINK_MODEL = getattr(
     settings,
-    'CMS_TEASERS_TEASER_LINK_MODEL',
+    'TEASERS_TEASER_LINK_MODEL',
     None
 )
 TEASER_LINK_FIELDS = getattr(
     settings,
-    'CMS_TEASERS_TEASER_LINK_FIELDS',
+    'TEASERS_TEASER_LINK_FIELDS',
+    None
+)
+TEASER_PAGE_INFO_MODELS = getattr(
+    settings,
+    'TEASERS_TEASER_PAGE_INFO_PLUGINS',
     None
 )

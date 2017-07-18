@@ -1,12 +1,15 @@
 from __future__ import unicode_literals
 
+from django.apps import apps
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin, Page
+from cms.models.fields import PageField
 from filer.fields.file import FilerFileField
+from filer.fields.image import FilerImageField
 
 from . import conf
 
@@ -73,8 +76,15 @@ class TeaserWrap(CMSPlugin):
 
 
 class Teaser(CMSPlugin):
+    link_cms = PageField(
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        verbose_name=_('Page'),
+    )
     name = models.CharField(
         max_length=150,
+        blank=True,
         default='',
         verbose_name=_('Name'),
     )
@@ -89,7 +99,15 @@ class Teaser(CMSPlugin):
         default=None,
         on_delete=models.SET_NULL,
         verbose_name=_('Icon'),
-        related_name='cms_teasers_teaser_filer_icon_set',
+        related_name='teasers_teaser_filer_icon_set',
+    )
+    filer_image = FilerImageField(
+        null=True,
+        blank=True,
+        default=None,
+        on_delete=models.SET_NULL,
+        verbose_name=_('Image'),
+        related_name='teasers_teaser_filer_image_set',
     )
 
     class Meta:
@@ -98,6 +116,33 @@ class Teaser(CMSPlugin):
 
     def __str__(self):
         return '{}'.format(self.name or self.pk or '')
+
+    def save(self, **kwargs):
+        super(Teaser, self).save(**kwargs)
+
+    def get_image(self):
+        if self.filer_image:
+            return self.filer_image
+        elif self.link_cms:
+            img_obj = self.get_page_info()
+            if img_obj:
+                return img_obj.image
+
+    def get_name(self):
+        if self.name:
+            return self.name
+        elif self.link_cms:
+            name_obj = self.get_page_info()
+            if name_obj:
+                return name_obj.name
+
+    def get_body(self):
+        if self.name:
+            return self.name
+        elif self.link_cms:
+            body_obj = self.get_page_info()
+            if body_obj:
+                return body_obj.abstract or body_obj.description
 
     def copy_relations(self, original):
         link = original.get_link()
@@ -127,6 +172,18 @@ class Teaser(CMSPlugin):
                         field_name = f.name
                         break
         return field_name
+
+    def get_page_info(self):
+        if conf.TEASER_PAGE_INFO_MODELS:
+            info_obj = None
+            for m in conf.TEASER_PAGE_INFO_MODELS:
+                model = apps.get_model(m)
+                obj = model.objects.filter(cms_page=self.link_cms).first()
+                if obj:
+                    info_obj = obj
+                    break
+            return info_obj
+        return None
 
     @property
     def link(self):

@@ -38,7 +38,7 @@ class TeaserWrapPlugin(CMSPluginBase):
     model = TeaserWrap
     name = _('Teasers wrap')
     module = _('content')
-    render_template = 'cms/plugins/cms_panels_multipanel.html'
+    render_template = 'cms/plugins/teasers_teaserwrap.html'
 
     def render(self, context, instance, placeholder):
         context.update({
@@ -70,6 +70,17 @@ class TeaserPluginForm(forms.ModelForm):
             ),
         }
 
+    def clean(self):
+        data = super(TeaserPluginForm, self).clean()
+        link_cms = data.get('link_cms', None)
+        name = data.get('name', '')
+        body = data.get('body', '')
+        if not link_cms and not (body or name):
+            msg = _('you have to give a name or a text')
+            self.add_error('name', msg)
+            self.add_error('body', msg)
+        return data
+
 
 class TeaserPlugin(CMSPluginBase):
     allow_children = conf.TEASER_ALLOW_CHILDREN
@@ -78,13 +89,14 @@ class TeaserPlugin(CMSPluginBase):
     fieldsets = conf.TEASER_FIELDSETS
     model = Teaser
     module = _('content')
-    name = _('Teaser info')
+    name = _('Teaser')
+
     if conf.TEASER_LINK_MODEL:
         inlines = [
             TeaserLinkInline
         ]
 
-    render_template = 'cms/plugins/cms_teasers_teaser.html'
+    render_template = 'cms/plugins/teasers_teaser.html'
 
     def render(self, context, instance, placeholder):
         context.update({
