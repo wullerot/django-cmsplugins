@@ -19,21 +19,21 @@ class TeaserWrapPluginForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'css_class': forms.Select(
-                choices=conf.WRAP_CSS_CLASSES,
+                choices=conf.TEASERSWRAP_CSS_CLASSES,
             ),
             'height': forms.Select(
-                choices=conf.WRAP_HEIGHTS,
+                choices=conf.TEASERSWRAP_HEIGHTS,
             ),
             'width': forms.Select(
-                choices=conf.WRAP_WIDTHS,
+                choices=conf.TEASERSWRAP_WIDTHS,
             )
         }
 
 
 class TeaserWrapPlugin(CMSPluginBase):
-    allow_children = conf.WRAP_ALLOW_CHILDREN
-    child_classes = conf.WRAP_PLUGINS
-    fieldsets = conf.WRAP_FIELDSETS
+    allow_children = conf.TEASERSWRAP_ALLOW_CHILDREN
+    child_classes = conf.TEASERSWRAP_PLUGINS
+    fieldsets = conf.TEASERSWRAP_FIELDSETS
     form = TeaserWrapPluginForm
     model = TeaserWrap
     name = _('Teasers wrap')

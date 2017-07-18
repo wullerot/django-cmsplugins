@@ -4,21 +4,21 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
 
-WRAP_ALLOW_CHILDREN = getattr(
+TEASERSWRAP_ALLOW_CHILDREN = getattr(
     settings,
-    'CMS_TEASERS_WRAP_ALLOW_CHILDREN',
+    'TEASERS_TEASERSWRAP_ALLOW_CHILDREN',
     True
 )
-WRAP_PLUGINS = getattr(
+TEASERSWRAP_PLUGINS = getattr(
     settings,
-    'CMS_TEASERS_WRAP_PLUGINS',
+    'TEASERS_TEASERSWRAP_PLUGINS',
     [
         'TeaserPlugin',
     ]
 )
-WRAP_FIELDSETS = getattr(
+TEASERSWRAP_FIELDSETS = getattr(
     settings,
-    'CMS_TEASERS_WRAP_FIELDSETS',
+    'TEASERS_TEASERSWRAP_FIELDSETS',
     [
         (_('content'), {
             'classes': ['section'],
@@ -38,23 +38,23 @@ WRAP_FIELDSETS = getattr(
         }),
     ]
 )
-WRAP_CSS_CLASSES = getattr(
+TEASERSWRAP_CSS_CLASSES = getattr(
     settings,
-    'CMS_TEASERS_WRAP_CSS_CLASSES',
+    'TEASERS_TEASERSWRAP_CSS_CLASSES',
     [
         ('', _('None')),
     ]
 )
-WRAP_HEIGHTS = getattr(
+TEASERSWRAP_HEIGHTS = getattr(
     settings,
-    'CMS_TEASERS_WRAP_HEIGHTS',
+    'TEASERS_TEASERSWRAP_HEIGHTS',
     [
         ('', _('auto')),
     ]
 )
-WRAP_WIDTHS = getattr(
+TEASERSWRAP_WIDTHS = getattr(
     settings,
-    'CMS_TEASERS_WRAP_WIDTHS',
+    'TEASERS_TEASERSWRAP_WIDTHS',
     [
         ('', _('auto')),
     ]
@@ -63,7 +63,7 @@ WRAP_WIDTHS = getattr(
 
 TEASER_FIELDSETS = getattr(
     settings,
-    'CMS_TEASERS_TEASER_FIELDSETS',
+    'TEASERS_TEASER_FIELDSETS',
     [
         (_('Page (auto content)'), {
             'classes': ['section'],
@@ -84,12 +84,12 @@ TEASER_FIELDSETS = getattr(
 )
 TEASER_ALLOW_CHILDREN = getattr(
     settings,
-    'CMS_TEASERS_TEASER_ALLOW_CHILDREN',
-    True
+    'TEASERS_TEASER_ALLOW_CHILDREN',
+    False
 )
 TEASER_PLUGINS = getattr(
     settings,
-    'CMS_TEASERS_TEASER_PLUGINS',
+    'TEASERS_TEASER_PLUGINS',
     []
 )
 TEASER_LINK_MODEL = getattr(
