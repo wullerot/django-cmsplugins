@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-#: cms_plugins.py:31
+#: cmsplugins.py:31
 msgid "layout"
 msgstr "Layout"
 
-#: cms_plugins.py:32
+#: cmsplugins.py:32
 msgid "section"
 msgstr "Section"
 

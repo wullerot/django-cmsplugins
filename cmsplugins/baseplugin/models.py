@@ -13,18 +13,54 @@ from filer.fields.file import FilerFileField
 
 @python_2_unicode_compatible
 class BasePlugin(CMSPlugin):
-    css_class = models.CharField(_('css class'), max_length=200, blank=True,
-                                 default='')
-    in_navigation = models.BooleanField(_('in navigation'), default=False)
-    is_visible = models.BooleanField(_('visible'), default=True)
-    height = models.CharField(_('height'), max_length=100, blank=True,
-                              default='')
-    width = models.CharField(_('width'), max_length=50, blank=True, default='')
-    name = models.CharField(_('title'), max_length=150, default='', blank=True)
-    show_name = models.BooleanField(_('display title'), default=True)
-    slug = models.SlugField(_('slug'), max_length=150, default='', blank=True,
-                            editable=False)
-    cms_page = models.ForeignKey(Page, editable=False, null=True)
+    css_class = models.CharField(
+        max_length=200,
+        blank=True,
+        default='',
+        verbose_name=_('css class'),
+    )
+    in_navigation = models.BooleanField(
+        default=False,
+        verbose_name=_('in navigation'),
+    )
+    is_visible = models.BooleanField(
+        default=True,
+        verbose_name=_('visible'),
+    )
+    height = models.CharField(
+        max_length=100,
+        blank=True,
+        default='',
+        verbose_name=_('height'),
+    )
+    width = models.CharField(
+        max_length=50,
+        blank=True,
+        default='',
+        verbose_name=_('width'),
+    )
+    name = models.CharField(
+        max_length=150,
+        default='',
+        blank=True,
+        verbose_name=_('title'),
+    )
+    show_name = models.BooleanField(
+        default=True,
+        verbose_name=_('display title'),
+    )
+    slug = models.SlugField(
+        max_length=150,
+        default='',
+        blank=True,
+        editable=False,
+        verbose_name=_('slug'),
+    )
+    cms_page = models.ForeignKey(
+        Page,
+        editable=False,
+        null=True,
+    )
 
     class Meta:
         abstract = True
@@ -74,19 +110,53 @@ class BasePlugin(CMSPlugin):
 
 @python_2_unicode_compatible
 class BaseLink(models.Model):
-    plugin = models.OneToOneField(CMSPlugin, null=True, blank=True,
-                                  related_name='plugin_link')
-    name = models.CharField(_('title'), max_length=150, default='', blank=True)
-    abstract = models.TextField(_('abstract'), max_length=250, default='',
-                           blank=True)
-    cms_page = PageField(verbose_name=_('page'), blank=True, null=True,
-                         on_delete=models.SET_NULL)
-    anchor = models.CharField(_('anchor'), max_length=150, blank=True,
-                              default='')
-    filer_file = FilerFileField(verbose_name=_('file'), blank=True, null=True,
-                                on_delete=models.SET_NULL)
-    url = models.URLField(_('URL'), max_length=255, blank=True, default='')
-    email = models.EmailField(_('Email'), blank=True, default='')
+    plugin = models.OneToOneField(
+        CMSPlugin,
+        null=True,
+        blank=True,
+        related_name='plugin_link'
+    )
+    name = models.CharField(
+        max_length=150,
+        default='',
+        blank=True,
+        verbose_name=_('title'),
+    )
+    abstract = models.TextField(
+        max_length=250,
+        default='',
+        blank=True,
+        verbose_name=_('abstract'),
+    )
+    cms_page = PageField(
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        verbose_name=_('page'),
+    )
+    anchor = models.CharField(
+        max_length=150,
+        blank=True,
+        default='',
+        verbose_name=_('anchor'),
+    )
+    filer_file = FilerFileField(
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        verbose_name=_('file'),
+    )
+    url = models.URLField(
+        max_length=255,
+        blank=True,
+        default='',
+        verbose_name=_('URL'),
+    )
+    email = models.EmailField(
+        blank=True,
+        default='',
+        verbose_name=_('Email'),
+    )
 
     class Meta:
         abstract = True

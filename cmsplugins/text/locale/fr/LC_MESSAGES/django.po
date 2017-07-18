@@ -19,20 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-#: cms_plugins.py:28 cms_plugins.py:53 cms_plugins.py:78 conf.py:21 conf.py:42
+#: cmsplugins.py:28 cmsplugins.py:53 cmsplugins.py:78 conf.py:21 conf.py:42
 #: conf.py:63
 msgid "content"
 msgstr "Contenu"
 
-#: cms_plugins.py:29
+#: cmsplugins.py:29
 msgid "text (editor)"
 msgstr "Texte"
 
-#: cms_plugins.py:54
+#: cmsplugins.py:54
 msgid "plain text"
 msgstr "Texte (texte clair)"
 
-#: cms_plugins.py:79
+#: cmsplugins.py:79
 msgid "title h1"
 msgstr "Titre de la page (H1)"
 

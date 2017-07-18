@@ -19,17 +19,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cms_plugins.py:28 cms_plugins.py:58 conf.py:38 conf.py:125
+#: cmsplugins.py:28 cmsplugins.py:58 conf.py:38 conf.py:125
 #, fuzzy
 #| msgid "content help"
 msgid "content"
 msgstr "Mostrato sotto l'indirizzo nel fumetto."
 
-#: cms_plugins.py:29
+#: cmsplugins.py:29
 msgid "Google Map"
 msgstr "Google Map"
 
-#: cms_plugins.py:59
+#: cmsplugins.py:59
 msgid "Google Street View"
 msgstr ""
 

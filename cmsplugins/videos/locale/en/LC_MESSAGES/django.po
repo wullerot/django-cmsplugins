@@ -18,11 +18,11 @@ msgstr ""
 "Language: \n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-#: cms_plugins.py:26 conf.py:28
+#: cmsplugins.py:26 conf.py:28
 msgid "content"
 msgstr "Content"
 
-#: cms_plugins.py:27
+#: cmsplugins.py:27
 msgid "video"
 msgstr "Video"
 

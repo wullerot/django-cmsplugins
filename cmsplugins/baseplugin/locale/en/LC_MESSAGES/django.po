@@ -18,15 +18,15 @@ msgstr ""
 "Language: \n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-#: cms_plugins.py:31 cms_plugins.py:63
+#: cmsplugins.py:31 cmsplugins.py:63
 msgid "layout"
 msgstr "Layout"
 
-#: cms_plugins.py:32
+#: cmsplugins.py:32
 msgid "section with columns"
 msgstr "Column section"
 
-#: cms_plugins.py:64
+#: cmsplugins.py:64
 msgid "column"
 msgstr "Column"
 

@@ -1,7 +1,7 @@
 {% spaceless %}
 {% load i18n cms_tags %}
 {% if object.is_visible or request.toolbar.edit_mode %}
-    <{{ object.html_tag }} id="{{ object.slug }}" class="plugin-wrap{{ object.css_classes }}"{{ object.html_style }}>
+    <{{ object.html_tag }} id="{{ object.slug }}" class="plugin-section{{ object.css_classes }}"{{ object.html_style }}>
         {% if object.icon %}
             {{ object.icon }}
         {% endif %}

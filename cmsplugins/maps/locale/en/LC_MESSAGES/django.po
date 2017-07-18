@@ -18,15 +18,15 @@ msgstr ""
 "Language: \n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-#: cms_plugins.py:28 cms_plugins.py:58 conf.py:38 conf.py:125
+#: cmsplugins.py:28 cmsplugins.py:58 conf.py:38 conf.py:125
 msgid "content"
 msgstr "Content"
 
-#: cms_plugins.py:29
+#: cmsplugins.py:29
 msgid "Google Map"
 msgstr "Google Map"
 
-#: cms_plugins.py:59
+#: cmsplugins.py:59
 msgid "Google Street View"
 msgstr "Google Street View"
 

@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: cms_plugins.py:30 cms_plugins.py:61 conf.py:28
+#: cmsplugins.py:30 cmsplugins.py:61 conf.py:28
 msgid "content"
 msgstr ""
 
-#: cms_plugins.py:31
+#: cmsplugins.py:31
 msgid "slider"
 msgstr ""
 
-#: cms_plugins.py:62
+#: cmsplugins.py:62
 msgid "slide"
 msgstr ""
 

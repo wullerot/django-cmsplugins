@@ -6,29 +6,29 @@ from django.utils.translation import ugettext_lazy as _
 from cmsplugins.baseplugin import defaults
 
 
-WRAP_BACKGROUND_COLORS = getattr(
+SECTION_BACKGROUND_COLORS = getattr(
     settings,
-    'SECTIONS_WRAP_BACKGROUND_COLORS',
+    'SECTIONS_SECTION_BACKGROUND_COLORS',
     defaults.BACKGROUND_COLORS
 )
-WRAP_CSS_CLASSES = getattr(
+SECTION_CSS_CLASSES = getattr(
     settings,
-    'SECTIONS_WRAP_CSS_CLASSES',
+    'SECTIONS_SECTION_CSS_CLASSES',
     defaults.CSS_CLASSES
 )
-WRAP_HEIGHTS = getattr(
+SECTION_HEIGHTS = getattr(
     settings,
-    'SECTIONS_WRAP_HEIGHTS',
+    'SECTIONS_SECTION_HEIGHTS',
     defaults.HEIGHTS
 )
-WRAP_WIDTHS = getattr(
+SECTION_WIDTHS = getattr(
     settings,
-    'SECTIONS_WRAP_WIDTHS',
+    'SECTIONS_SECTION_WIDTHS',
     defaults.WIDTHS
 )
-WRAP_FIELDSETS = getattr(
+SECTION_FIELDSETS = getattr(
     settings,
-    'SECTIONS_WRAP_FIELDSETS',
+    'SECTIONS_SECTION_FIELDSETS',
     [
         (_('content'), {
             'classes': ['section', 'content'],
@@ -57,17 +57,17 @@ WRAP_FIELDSETS = getattr(
         }),
     ]
 )
-WRAP_HTML_TAGS = getattr(
+SECTION_HTML_TAGS = getattr(
     settings,
-    'SECTIONS_WRAP_HTML_TAGS',
+    'SECTIONS_SECTION_HTML_TAGS',
     [
         ('div', _('div')),
         ('article', _('article (if this section could be a page of its own)')),
         ('section', _('section (if this section has a title)')),
     ]
 )
-WRAP_PLUGINS = getattr(
+SECTION_PLUGINS = getattr(
     settings,
-    'SECTIONS_WRAP_PLUGINS',
+    'SECTIONS_SECTION_PLUGINS',
     []
 )
