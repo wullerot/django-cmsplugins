@@ -126,7 +126,11 @@ class Teaser(CMSPlugin):
         elif self.link_cms:
             img_obj = self.get_page_info()
             if img_obj:
-                return img_obj.image
+                # TODO do this the proper way
+                try:
+                    return img_obj.image
+                except:
+                    return ''
 
     def get_name(self):
         if self.name:
@@ -134,7 +138,11 @@ class Teaser(CMSPlugin):
         elif self.link_cms:
             name_obj = self.get_page_info()
             if name_obj:
-                return name_obj.name
+                # TODO do this the proper way
+                try:
+                    return name_obj.name
+                except:
+                    return ''
 
     def get_body(self):
         if self.body:
@@ -142,7 +150,11 @@ class Teaser(CMSPlugin):
         elif self.link_cms:
             body_obj = self.get_page_info()
             if body_obj:
-                return body_obj.abstract or body_obj.description
+                # TODO do this the proper way
+                try:
+                    return body_obj.abstract or body_obj.description
+                except:
+                    return ''
 
     def copy_relations(self, original):
         link = original.get_link()
