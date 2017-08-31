@@ -2,6 +2,7 @@ var GoogleAPI = ( function( $ ) {
     'use strict';
 
     var apisrc = 'https://maps.google.com/maps/api/js';
+    var lang = $( 'html' ).attr( 'lang' );
     var callback_list = [];
     var $doc = $( document );
 
@@ -11,7 +12,11 @@ var GoogleAPI = ( function( $ ) {
         var $apikey = $('.google-apikey:first');
         if ( $apikey.length > 0 ) {
             var apikey = $apikey.data('apikey')
-            $.getScript(apisrc + '?callback=GoogleAPI.loaded_api&key=' + apikey);
+            var url = apisrc + '?callback=GoogleAPI.loaded_api&key=' + apikey;
+            if( lang ) {
+                url = url + '&language=' + lang;
+            }
+            $.getScript( url );
         }
     };
 
