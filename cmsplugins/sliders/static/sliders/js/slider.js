@@ -43,9 +43,11 @@ var Slider = ( function( $ ) {
         var indicators = $slider.data('indicators');
         var max = $slides.length - 1;
 
-        set_arrows();
-        set_indicators();
-        set_timer();
+        if( $slides.length > 1 ) {
+            set_arrows();
+            set_indicators();
+            set_timer();
+        }
 
         function animate() {
             window.clearTimeout( timer );
