@@ -81,6 +81,15 @@ class BasePlugin(CMSPlugin):
             self.slug = 'section-{0}'.format(self.pk)
         super(BasePlugin, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        if self.cms_page:
+            return '{}#{}'.format(
+                self.cms_page.get_absolute_url(),
+                self.slug
+            )
+        return ''
+    get_absolute_url.short_description = _('Absolute URL')
+
     @property
     def css_classes(self):
         classes = []

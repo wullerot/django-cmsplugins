@@ -57,6 +57,7 @@ class GalleryPlugin(CMSPluginBase):
         })
         return context
 
+
 plugin_pool.register_plugin(GalleryPlugin)
 
 
@@ -102,6 +103,7 @@ class GalleryPicturePlugin(CMSPluginBase):
         })
         return context
 
+
 plugin_pool.register_plugin(GalleryPicturePlugin)
 
 
@@ -146,5 +148,6 @@ class PicturePlugin(CMSPluginBase):
             'indicator_hidden': get_indicator_hidden(request, instance),
         })
         return context
+
 
 plugin_pool.register_plugin(PicturePlugin)

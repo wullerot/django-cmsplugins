@@ -42,6 +42,9 @@ class SectionPlugin(CMSPluginBase):
     model = Section
     module = _('layout')
     name = _('Section')
+    readonly_fields = [
+        'get_absolute_url',
+    ]
     render_template = 'cms/plugins/sections_section.html'
 
     def render(self, context, instance, placeholder):

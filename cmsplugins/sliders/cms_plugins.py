@@ -109,7 +109,7 @@ class SliderSlidePluginForm(forms.ModelForm):
                 choices=conf.SLIDERSLIDE_IMAGE_ANIMATIONS,
             ),
             'name': forms.Textarea(
-                attrs={'rows': 1},
+                attrs={'rows': 2},
             ),
             'text_animation': forms.Select(
                 choices=conf.SLIDERSLIDE_TEXT_ANIMATIONS,

@@ -1,23 +1,31 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from django.utils.html import mark_safe
-from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 from cmsplugins.baseplugin.models import BasePlugin
 from filer.fields.image import FilerImageField
 
-from . import conf
-
 
 class Gallery(BasePlugin):
     # TODO add more layouts
-    layout = models.CharField(_('type'), max_length=20, blank=True, default='')
-    abstract = models.TextField(_('short description'), max_length=150,
-                                blank=True, default='')
-    description = models.TextField(_('long description '), blank=True,
-                                   default='')
+    layout = models.CharField(
+        max_length=20,
+        blank=True,
+        default='',
+        verbose_name=_('type'),
+    )
+    abstract = models.TextField(
+        max_length=150,
+        blank=True,
+        default='',
+        verbose_name=_('short description'),
+    )
+    description = models.TextField(
+        blank=True,
+        default='',
+        verbose_name=_('long description '),
+    )
 
     @property
     def css_classes(self):
@@ -40,9 +48,23 @@ class Gallery(BasePlugin):
 
 
 class Picture(BasePlugin):
-    show_popup = models.BooleanField(_('show popup'), default=False)
-    image = FilerImageField(verbose_name=_('image'), null=True, default=None,
-                            on_delete=models.SET_NULL)
-    abstract = models.TextField(_('short description'), blank=True, default='')
-    description = models.TextField(_('long description '), blank=True,
-                                   default='')
+    show_popup = models.BooleanField(
+        default=False,
+        verbose_name=_('show popup'),
+    )
+    image = FilerImageField(
+        null=True,
+        default=None,
+        on_delete=models.SET_NULL,
+        verbose_name=_('image'),
+    )
+    abstract = models.TextField(
+        blank=True,
+        default='',
+        verbose_name=_('short description'),
+    )
+    description = models.TextField(
+        blank=True,
+        default='',
+        verbose_name=_('long description '),
+    )

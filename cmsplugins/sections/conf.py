@@ -30,25 +30,39 @@ SECTION_FIELDSETS = getattr(
     settings,
     'SECTIONS_SECTION_FIELDSETS',
     [
-        (_('content'), {
-            'classes': ['section', 'content'],
+        (_('Info'), {
+            'classes': [
+                'section',
+            ],
             'fields': [
-                'name'
-                # 'show_name',
+                'get_absolute_url',
             ],
         }),
-        (_('design'), {
-            'classes': ['section', 'styles'],
+        (_('Content'), {
+            'classes': [
+                'section',
+            ],
             'fields': [
-                # 'width',
-                # 'height',
+                'name',
+                'show_name',
+            ],
+        }),
+        (_('Design'), {
+            'classes': [
+                'section',
+            ],
+            'fields': [
+                'width',
+                'height',
                 'bg_color',
                 'bg_image',
                 'css_class'
             ],
         }),
-        (_('settings'), {
-            'classes': ['section', 'settings'],
+        (_('Settings'), {
+            'classes': [
+                'section',
+            ],
             'fields': [
                 'is_visible',
                 'in_navigation',

@@ -53,4 +53,5 @@ class IFramePlugin(CMSPluginBase):
         })
         return context
 
+
 plugin_pool.register_plugin(IFramePlugin)
