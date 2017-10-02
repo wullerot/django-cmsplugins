@@ -76,9 +76,9 @@ class BasePlugin(CMSPlugin):
         if self.page:
             self.cms_page_id = self.page.id
         if self.name:
-            self.slug = '{0}'.format(slugify(self.name))
+            self.slug = '{0}-{1}'.format(slugify(self.name), self.position)
         else:
-            self.slug = 'section-{0}'.format(self.pk)
+            self.slug = 'section-{0}'.format(self.position)
         super(BasePlugin, self).save(*args, **kwargs)
 
     def get_absolute_url(self):

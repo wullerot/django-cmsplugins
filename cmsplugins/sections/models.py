@@ -12,8 +12,30 @@ from filer.fields.image import FilerImageField
 from . import conf
 
 
+class SectionManager(models.Manager):
+
+    def get_as_anchor_choices(self):
+        qs = self.get_queryset()
+        kwargs = {'cms_page__publisher_is_draft': False}
+        plugins = qs.filter(**kwargs).order_by('cms_page_id', 'position')
+        choices = [('', '---')]
+        pages = []
+        counter = 0
+        for p in plugins:
+            if p.cms_page_id:
+                if p.cms_page_id not in pages:
+                    pages.append(p.cms_page_id)
+                    choices.append([p.cms_page.get_title(), []])
+                    counter += 1
+                choices[counter][1].append((p.slug, p.cms_page_anchor_name))
+        return choices
+
+
 @python_2_unicode_compatible
 class Section(BasePlugin):
+
+    objects = SectionManager()
+
     bg_color = models.CharField(
         max_length=50,
         blank=True,
@@ -63,6 +85,14 @@ class Section(BasePlugin):
         if not self.is_visible:
             name = '{0} | {1}'.format(name, _('(hidden)'))
         return name
+
+    @property
+    def cms_page_anchor_name(self):
+        if self.cms_page:
+            return '{}'.format(
+                self.name or self.slug
+            )
+        return ''
 
     @property
     def css_classes(self):
