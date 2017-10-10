@@ -86,6 +86,10 @@ class Section(BasePlugin):
             name = '{0} | {1}'.format(name, _('(hidden)'))
         return name
 
+    def get_anchor(self):
+        return '#{}'.format(self.slug)
+    get_anchor.short_description = _('Anchor')
+
     @property
     def cms_page_anchor_name(self):
         if self.cms_page:

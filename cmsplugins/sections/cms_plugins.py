@@ -44,6 +44,7 @@ class SectionPlugin(CMSPluginBase):
     name = _('Section')
     readonly_fields = [
         'get_absolute_url',
+        'get_anchor',
     ]
     render_template = 'cms/plugins/sections_section.html'
 

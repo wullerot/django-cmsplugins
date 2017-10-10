@@ -1,17 +1,12 @@
 from __future__ import unicode_literals
 
-from django.apps import apps
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.safestring import mark_safe
-from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 from cmsplugins.baseplugin.models import BasePlugin, BaseLink
-from cmsplugins.baseplugin.utils import load_object
 from filer.fields.image import FilerImageField
-
-from . import conf
 
 
 class Slider(BasePlugin):
@@ -49,19 +44,54 @@ class Slider(BasePlugin):
 
 @python_2_unicode_compatible
 class Slide(BasePlugin):
-    # TODO implement animation framework
-    abstract = models.TextField(_('abstract'), default='', blank=True)
-    description = models.TextField(_('description'), default='', blank=True)
-    text_animation = models.CharField(_('text animation'), max_length=50,
-                                      blank=True, default='')
-    text_color = models.CharField(_('text color'), max_length=100,
-                                  blank=True, default='')
-    text_position = models.CharField(_('text position'), max_length=100,
-                                     blank=True, default='')
-    image = FilerImageField(verbose_name=_('image'), null=True, default=None,
-                            on_delete=models.SET_NULL, related_name='+')
-    image_animation = models.CharField(_('image animation'), max_length=50,
-                                       blank=True, default='')
+
+    name_sub = models.CharField(
+        max_length=150,
+        default='',
+        blank=True,
+        verbose_name=_('Subtitle'),
+    )
+    abstract = models.TextField(
+        default='',
+        blank=True,
+        verbose_name=_('abstract'),
+    )
+    description = models.TextField(
+        default='',
+        blank=True,
+        verbose_name=_('description'),
+    )
+    text_animation = models.CharField(
+        max_length=50,
+        blank=True,
+        default='',
+        verbose_name=_('text animation'),
+    )
+    text_color = models.CharField(
+        max_length=100,
+        blank=True,
+        default='',
+        verbose_name=_('text color'),
+    )
+    text_position = models.CharField(
+        max_length=100,
+        blank=True,
+        default='',
+        verbose_name=_('text position'),
+    )
+    image = FilerImageField(
+        null=True,
+        default=None,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name=_('image'),
+    )
+    image_animation = models.CharField(
+        max_length=50,
+        blank=True,
+        default='',
+        verbose_name=_('image animation'),
+    )
 
     def __str__(self):
         if self.is_visible:
