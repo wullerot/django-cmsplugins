@@ -121,6 +121,15 @@ class Slide(BasePlugin):
             link.plugin_id = self.id
             link.save()
 
+    def get_image(self):
+        return self.image
+
+    def get_title(self):
+        return self.name
+
+    def get_subtitle(self):
+        return self.name_sub
+
     @property
     def css_classes(self):
         classes = []
