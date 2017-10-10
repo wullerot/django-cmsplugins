@@ -111,6 +111,9 @@ class SliderSlidePluginForm(forms.ModelForm):
             'name': forms.Textarea(
                 attrs={'rows': 2},
             ),
+            'name_sub': forms.Textarea(
+                attrs={'rows': 2},
+            ),
             'text_animation': forms.Select(
                 choices=conf.SLIDERSLIDE_TEXT_ANIMATIONS,
             ),

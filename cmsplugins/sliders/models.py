@@ -98,8 +98,8 @@ class Slide(BasePlugin):
             hidden = ''
         else:
             hidden = ' {0}'.format(_('(hidden)'))
-        if self.name:
-            return '{0}{1}'.format(' '.join(self.name.splitlines()), hidden)
+        if self.full_name:
+            return '{0}{1}'.format(self.full_name, hidden)
         elif self.image:
             return '{0}{1}'.format(self.image.name or self.image, hidden)
         else:
@@ -134,6 +134,16 @@ class Slide(BasePlugin):
             return ' {0}'.format(' '.join(classes))
         else:
             return ''
+
+    @property
+    def full_name(self):
+        names = []
+        if self.name:
+            names.append(' '.join(self.name.splitlines()))
+        if self.name_sub:
+            names.append(' '.join(self.name_sub.splitlines()))
+        name = ' '.join(names)
+        return name.strip()
 
     @property
     def html_data(self):
