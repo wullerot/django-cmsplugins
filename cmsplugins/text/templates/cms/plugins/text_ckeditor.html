@@ -1,4 +1,4 @@
 {% spaceless %}
 {% load text_ckeditor_filters %}
-<div class="plugin-text plugin-text-ckeditor{% object.css_classes %}">{{ object.body|text_ckeditor_render }}</div>
+<div class="plugin-text plugin-text-ckeditor{{ object.css_classes }}">{{ object.body|text_ckeditor_render }}</div>
 {% endspaceless %}
