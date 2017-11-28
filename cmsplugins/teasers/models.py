@@ -129,7 +129,7 @@ class Teaser(CMSPlugin):
                 # TODO do this the proper way
                 try:
                     return img_obj.image
-                except:
+                except: # NOQA
                     return ''
 
     def get_name(self):
@@ -137,11 +137,12 @@ class Teaser(CMSPlugin):
             return self.name
         elif self.link_cms:
             name_obj = self.get_page_info()
+            print name_obj
             if name_obj:
                 # TODO do this the proper way
                 try:
                     return name_obj.name
-                except:
+                except: # NOQA
                     return ''
 
     def get_body(self):
@@ -153,7 +154,7 @@ class Teaser(CMSPlugin):
                 # TODO do this the proper way
                 try:
                     return body_obj.abstract or body_obj.description
-                except:
+                except: # NOQA
                     return ''
 
     def copy_relations(self, original):
@@ -190,7 +191,10 @@ class Teaser(CMSPlugin):
             info_obj = None
             for m in conf.TEASER_PAGE_INFO_MODELS:
                 model = apps.get_model(m)
-                obj = model.objects.filter(cms_page=self.link_cms).first()
+                obj = model.objects.filter(
+                    language=self.language,
+                    cms_page=self.link_cms
+                ).first()
                 if obj:
                     info_obj = obj
                     break
