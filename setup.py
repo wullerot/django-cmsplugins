@@ -21,7 +21,7 @@ setup(
         'cssselect>=0.9.2',
         'Django>=1.8,<1.12',
         'django-cms>=3.3.2,<3.5',
-        'django-filer>=1.2.0,<1.3',
+        'django-filer>=1.2.0,<1.3.2',
         'googlemaps>=2.4.4,<2.5',
         'lxml>=3.6.4,<3.7',
     ),
