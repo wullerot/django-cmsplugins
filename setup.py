@@ -23,7 +23,7 @@ setup(
         'django-cms>=3.3.2,<3.5',
         'django-filer>=1.2.0,<1.3.2',
         'googlemaps>=2.4.4,<2.6',
-        'lxml>=3.6.4,<4.2',
+        'lxml>=3.6.4,<5.0',
     ),
     include_package_data=True,
     zip_safe=False,
