@@ -70,7 +70,10 @@ class BasePlugin(CMSPlugin):
             hidden = ''
         else:
             hidden = ' | {0}'.format(_('(hidden)'))
-        return '{0}{1}'.format(' '.join(self.name.splitlines()), hidden)
+        return '{}{}'.format(
+            ' '.join(self.name.splitlines()),
+            hidden,
+        )
 
     def save(self, *args, **kwargs):
         if self.page:
