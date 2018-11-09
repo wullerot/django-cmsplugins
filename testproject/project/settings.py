@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STORAGE_ROOT = os.path.join(BASE_DIR, '..', 'storage')
+STORAGE_ROOT = os.path.join(BASE_DIR, 'storage')
 STATIC_ROOT = os.path.join(STORAGE_ROOT, 'static')
 MEDIA_ROOT = os.path.join(STORAGE_ROOT, 'media')
 
