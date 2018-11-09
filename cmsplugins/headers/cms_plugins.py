@@ -62,4 +62,5 @@ class HeaderPlugin(CMSPluginBase):
         })
         return context
 
+
 plugin_pool.register_plugin(HeaderPlugin)

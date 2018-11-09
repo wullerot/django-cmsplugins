@@ -1,2 +1,2 @@
-__version__ = '0.3.17'
+__version__ = '0.4a1'
 __author__ = 'alaric'

@@ -66,13 +66,10 @@ class BasePlugin(CMSPlugin):
         abstract = True
 
     def __str__(self):
-        if self.is_visible:
-            hidden = ''
-        else:
-            hidden = ' | {0}'.format(_('(hidden)'))
-        return '{}{}'.format(
-            ' '.join(self.name.splitlines()),
-            hidden,
+        return '{} {} {}'.format(
+            self.position,
+            self._meta.verbose_name,
+            self.pk,
         )
 
     def save(self, *args, **kwargs):

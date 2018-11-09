@@ -54,6 +54,7 @@ class GoogleMapPlugin(CMSPluginBase):
         })
         return context
 
+
 plugin_pool.register_plugin(GoogleMapPlugin)
 
 
@@ -93,5 +94,6 @@ class StreetViewPlugin(CMSPluginBase):
             'placeholder': placeholder,
         })
         return context
+
 
 plugin_pool.register_plugin(StreetViewPlugin)

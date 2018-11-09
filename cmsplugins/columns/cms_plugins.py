@@ -1,10 +1,8 @@
 from __future__ import unicode_literals
 
 from django import forms
-from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from cms.models import CMSPlugin
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 
@@ -48,9 +46,10 @@ class ColumnPlugin(CMSPluginBase):
         request = context['request']
         context.update({
             'object': instance,
-            'placeholder':placeholder,
+            'placeholder': placeholder,
             'indicator_hidden': get_indicator_hidden(request, instance),
         })
         return context
+
 
 plugin_pool.register_plugin(ColumnPlugin)

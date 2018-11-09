@@ -1,0 +1,17 @@
+<!DOCTYPE html>{% load static i18n compress sekizai_tags cms_tags  %}
+<html lang="{{ request.LANGUAGE_CODE }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="{% page_attribute meta_description %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% page_attribute "page_title" %}</title>
+        {# compress css %}<link rel="stylesheet" type="text/x-scss" href="{% static "scss/styles.scss" %}" />{% endcompress #}
+        {% render_block 'css' %}{% render_block 'js' %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        {% block body %}
+            <div id="body-content" class="content">{% placeholder 'body' %}</div>
+        {% endblock %}
+    </body>
+</html>
