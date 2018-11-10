@@ -118,9 +118,7 @@ class Section(BasePlugin):
     def html_style(self):
         html = ''
         if self.bg_image:
-            html = (
-                ' style="'
-                'background-image: url({0});'
-                '"'
-            ).format(self.bg_image.url)
+            html = ' style="background-image: url({0});"'.format(
+                self.bg_image.url
+            )
         return mark_safe(html)
