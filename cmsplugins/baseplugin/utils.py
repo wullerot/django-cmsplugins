@@ -13,7 +13,10 @@ def get_indicator_hidden(request, instance):
     if request.toolbar.edit_mode and not is_visible:
         name = _('hidden')
         css_class = 'plugin-indicator-hidden'
-        html = '<span class="{0}">{1}</span>'.format(css_class, name)
+        html = '<span class="{}">{}</span>'.format(
+            css_class,
+            name,
+        )
     return mark_safe(html)
 
 
@@ -26,8 +29,8 @@ def load_object(import_path):
         return import_path
     if '.' not in import_path:
         raise TypeError(
-            "'import_path' argument to 'django_load.core.load_object' must "
-            "contain at least one dot."
+            "'import_path' argument to 'django_load.core.load_object'"
+            " must contain at least one dot."
         )
     module_name, object_name = import_path.rsplit('.', 1)
     module = import_module(module_name)

@@ -20,4 +20,8 @@ class AnchorWidget(forms.TextInput):
             'data-url': '/admin/links/baselink/anchors/'
         }
         final_attrs = self.build_attrs(attrs, **kwargs)
-        return super(AnchorWidget, self).render(name, value, attrs=final_attrs)
+        return super(AnchorWidget, self).render(
+            name,
+            value,
+            attrs=final_attrs
+        )

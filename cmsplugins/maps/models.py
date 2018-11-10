@@ -21,44 +21,116 @@ class GoogleMap(BasePlugin):
     browser_apikey = conf.GOOGLEMAP_BROWSER_KEY
     server_apikey = conf.GOOGLEMAP_SERVER_KEY
 
-    address = models.CharField(_('address'), max_length=150)
-    zipcode = models.CharField(_('zip code'), max_length=30)
-    city = models.CharField(_('city'), max_length=100)
-    info_content = models.TextField(_('textbox content'), max_length=255,
-                                    blank=True, help_text=_('content help'))
-    info_image = FilerImageField(verbose_name=_('textbox image'),
-                                 null=True, default=None, blank=True,
-                                 on_delete=models.SET_NULL, related_name='+')
-    map_type = models.CharField(_('map type'), max_length=40,
-                                default='ROADMAP')
-    style = models.TextField(_('custom map style'), blank=True,
-                             help_text=_('google map styles'))
-    zoom = models.PositiveSmallIntegerField(_('zoom level'), default=14)
-    lat = models.CharField(_('latitude'), max_length=20, null=True, blank=True)
-    lng = models.CharField(_('longitude'), max_length=20, null=True,
-                           blank=True, help_text=_('lat help'))
-    pan_heading = models.CharField(_('camera orientation'), max_length=20,
-                                   null=True, blank=True)
-    pan_pitch = models.CharField(_('camera pitch'), max_length=20, null=True,
-                                 blank=True)
-    route_planer_title = models.CharField(_('route planner title'), null=True,
-                                          max_length=150, blank=True,
-                                          default=_('Calculate your fastest '
-                                                    'way to here'))
-    route_planer = models.BooleanField(_('route planner'), default=False)
-    info_window = models.BooleanField(_('info window'), default=True,
-                                      help_text=_('Show textbox over marker'))
-    scrollwheel = models.BooleanField(_('scrollwheel'), default=True,
-                                      help_text=_('scrollwheel help'))
-    double_click_zoom = models.BooleanField(_('double click zoom'),
-                                            default=True)
-    draggable = models.BooleanField(_('draggable'), default=True)
-    keyboard_shortcuts = models.BooleanField(_('keyboard shortcuts'),
-                                             default=True)
-    pan_control = models.BooleanField(_('Pan control'), default=True)
-    zoom_control = models.BooleanField(_('zoom control'), default=True)
-    street_view_control = models.BooleanField(_('Street View control'),
-                                              default=True)
+    address = models.CharField(
+        max_length=150,
+        verbose_name=_('address'),
+    )
+    zipcode = models.CharField(
+        max_length=30,
+        verbose_name=_('zip code'),
+    )
+    city = models.CharField(
+        max_length=100,
+        verbose_name=_('city'),
+    )
+    info_content = models.TextField(
+        max_length=255,
+        blank=True,
+        verbose_name=_('textbox content'),
+        help_text=_('content help'),
+    )
+    info_image = FilerImageField(
+        null=True,
+        default=None,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name=_('textbox image'),
+    )
+    map_type = models.CharField(
+        max_length=40,
+        default='ROADMAP',
+        verbose_name=_('map type'),
+    )
+    style = models.TextField(
+        blank=True,
+        help_text=_('google map styles'),
+        verbose_name=_('custom map style'),
+    )
+    zoom = models.PositiveSmallIntegerField(
+        default=14,
+        verbose_name=_('zoom level'),
+    )
+    lat = models.CharField(
+        max_length=20,
+        null=True,
+        blank=True,
+        verbose_name=_('latitude'),
+    )
+    lng = models.CharField(
+        max_length=20,
+        null=True,
+        blank=True,
+        verbose_name=_('longitude'),
+        help_text=_('lat help'),
+    )
+    pan_heading = models.CharField(
+        max_length=20,
+        null=True,
+        blank=True,
+        verbose_name=_('camera orientation'),
+    )
+    pan_pitch = models.CharField(
+        max_length=20,
+        null=True,
+        blank=True,
+        verbose_name=_('camera pitch'),
+    )
+    route_planer_title = models.CharField(
+        null=True,
+        max_length=150,
+        blank=True,
+        default=_('Calculate your fastest way to here'),
+        verbose_name=_('route planner title'),
+    )
+    route_planer = models.BooleanField(
+        default=False,
+        verbose_name=_('route planner'),
+    )
+    info_window = models.BooleanField(
+        default=True,
+        verbose_name=_('info window'),
+        help_text=_('Show textbox over marker'),
+    )
+    scrollwheel = models.BooleanField(
+        default=True,
+        verbose_name=_('scrollwheel'),
+        help_text=_('scrollwheel help'),
+    )
+    double_click_zoom = models.BooleanField(
+        default=True,
+        verbose_name=_('double click zoom'),
+    )
+    draggable = models.BooleanField(
+        default=True,
+        verbose_name=_('draggable'),
+    )
+    keyboard_shortcuts = models.BooleanField(
+        default=True,
+        verbose_name=_('keyboard shortcuts'),
+    )
+    pan_control = models.BooleanField(
+        default=True,
+        verbose_name=_('Pan control'),
+    )
+    zoom_control = models.BooleanField(
+        default=True,
+        verbose_name=_('zoom control'),
+    )
+    street_view_control = models.BooleanField(
+        default=True,
+        verbose_name=_('Street View control'),
+    )
 
     def save(self, *args, **kwargs):
         if not self.lat and not self.lng:
@@ -78,8 +150,11 @@ class GoogleMap(BasePlugin):
         data = {
             'data-id': self.pk,
             'data-title': self.name,
-            'data-address': '{0}, {1} {2}'.format(self.address, self.zipcode,
-                                                  self.city),
+            'data-address': '{0}, {1} {2}'.format(
+                self.address,
+                self.zipcode,
+                self.city,
+            ),
             'data-street': self.address,
             'data-zip': self.zipcode,
             'data-city': self.city,
@@ -108,11 +183,12 @@ class GoogleMap(BasePlugin):
                 lines[0] = '<strong>{0}</strong>'.format(lines[0])
                 data['data-info'] = '<br>'.join(lines)
             else:
-                info = ('<strong>{0}</strong><br>'
-                        '{1}<br>{2} {3}<br>').format(self.name,
-                                                            self.address,
-                                                            self.zipcode,
-                                                            self.city)
+                info = '<strong>{0}</strong><br>{1}<br>{2} {3}<br>'.format(
+                    self.name,
+                    self.address,
+                    self.zipcode,
+                    self.city
+                )
                 data['data-info'] = mark_safe(info)
             if self.info_image:
                 data['data-info_image'] = self.info_image.url

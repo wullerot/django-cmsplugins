@@ -76,7 +76,10 @@ class BasePlugin(CMSPlugin):
         if self.page:
             self.cms_page_id = self.page.id
         if self.name:
-            self.slug = '{0}-{1}'.format(slugify(self.name), self.position)
+            self.slug = '{}-{}'.format(
+                slugify(self.name),
+                self.position
+            )
         else:
             self.slug = 'section-{0}'.format(self.position)
         super(BasePlugin, self).save(*args, **kwargs)
@@ -100,21 +103,21 @@ class BasePlugin(CMSPlugin):
         if self.css_class:
             classes.append(self.css_class)
         if classes:
-            return ' {0}'.format(' '.join(classes))
+            return ' {}'.format(' '.join(classes))
         else:
             return ''
 
     @property
     def menu_title(self):
         if self.name:
-            return '{0}'.format(self.name)
+            return '{}'.format(self.name)
         else:
-            return '{0}'.format(self.slug)
+            return '{}'.format(self.slug)
 
     @property
     def title(self):
         if self.show_name and self.name:
-            return '{0}'.format(self.name)
+            return '{}'.format(self.name)
 
 
 @python_2_unicode_compatible

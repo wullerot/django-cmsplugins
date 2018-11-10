@@ -11,9 +11,12 @@ from filer.fields.image import FilerImageField
 from . import conf
 
 
+# TODO check that the markup is an iframe and there is no script in it
 class IFrame(BasePlugin):
-    # TODO check that the markup is an iframe and there is no script in it
-    markup = models.TextField(_('iframe code'), max_length=700)
+    markup = models.TextField(
+        max_length=700,
+        verbose_name=_('iframe code'),
+    )
 
     @property
     def iframe(self):

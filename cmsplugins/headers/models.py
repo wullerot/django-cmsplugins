@@ -12,17 +12,38 @@ from . import conf
 
 @python_2_unicode_compatible
 class Header(BasePlugin):
-    abstract = models.TextField(_('abstract'), max_length=250, default='',
-                                blank=True)
-    description = models.TextField(_('descrition'), max_length=250, default='',
-                                   blank=True)
-    text_position = models.CharField(_('text position'), max_length=100,
-                                     blank=True, default='')
-    text_color = models.CharField(_('text color'), max_length=100, blank=True,
-                                  default='')
-    image = FilerImageField(verbose_name=_('image'), null=True, default=None,
-                            blank=True, on_delete=models.SET_NULL,
-                            related_name='+')
+    abstract = models.TextField(
+        max_length=250,
+        default='',
+        blank=True,
+        verbose_name=_('abstract'),
+    )
+    description = models.TextField(
+        max_length=250,
+        default='',
+        blank=True,
+        verbose_name=_('descrition'),
+    )
+    text_position = models.CharField(
+        max_length=100,
+        blank=True,
+        default='',
+        verbose_name=_('text position'),
+    )
+    text_color = models.CharField(
+        max_length=100,
+        blank=True,
+        default='',
+        verbose_name=_('text color'),
+    )
+    image = FilerImageField(
+        null=True,
+        default=None,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name=_('image'),
+    )
 
     def __str__(self):
         if self.is_visible:
