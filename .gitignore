@@ -84,7 +84,6 @@ celerybeat-schedule
 # virtualenv
 venv/
 ENV/
-filer_public_thumbnails
 
 # Spyder project settings
 .spyderproject
