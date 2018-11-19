@@ -25,7 +25,7 @@ setup(
     install_requires=(
         'cssselect>=0.9.2',
         'Django>=1.11,<2.0',
-        'django-cms>=3.4,<3.5',
+        'django-cms>=3.4,<3.6',
         'django-filer>=1.3.0',
         'googlemaps>=2.4.4',
         'lxml>=3.6.4',
