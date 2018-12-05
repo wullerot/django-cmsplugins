@@ -10,6 +10,9 @@ from cms.models import CMSPlugin, Page
 
 @python_2_unicode_compatible
 class BasePlugin(CMSPlugin):
+
+    cmsplugin = True
+
     css_class = models.CharField(
         max_length=200,
         blank=True,

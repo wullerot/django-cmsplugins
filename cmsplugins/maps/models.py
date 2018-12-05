@@ -8,7 +8,7 @@ from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 import googlemaps
-from cmsplugins.baseplugin.models import BasePlugin
+from cmsplugins.base.models import BasePlugin
 from filer.fields.image import FilerImageField
 
 from . import conf

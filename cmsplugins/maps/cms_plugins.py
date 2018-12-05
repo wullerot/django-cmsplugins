@@ -3,15 +3,17 @@ from __future__ import unicode_literals
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin.utils import get_indicator_hidden
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
+from cmsplugins.base.forms import CMSPluginForm
+from cmsplugins.base.utils import get_indicator_hidden
 
 from . import conf
 from .models import GoogleMap
 
 
-class GoogleMapPluginForm(forms.ModelForm):
+class GoogleMapPluginForm(CMSPluginForm):
+
     class Meta:
         fields = '__all__'
         model = GoogleMap
@@ -58,7 +60,7 @@ class GoogleMapPlugin(CMSPluginBase):
 plugin_pool.register_plugin(GoogleMapPlugin)
 
 
-class StreetViewPluginForm(forms.ModelForm):
+class StreetViewPluginForm(CMSPluginForm):
     class Meta:
         fields = '__all__'
         model = GoogleMap

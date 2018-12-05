@@ -3,15 +3,16 @@ from __future__ import unicode_literals
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin.utils import get_indicator_hidden
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
+from cmsplugins.base.forms import CMSPluginForm
+from cmsplugins.base.utils import get_indicator_hidden
 
 from . import conf
 from .models import Picture, Gallery
 
 
-class GalleryPluginForm(forms.ModelForm):
+class GalleryPluginForm(CMSPluginForm):
     class Meta:
         fields = '__all__'
         model = Gallery
@@ -61,7 +62,7 @@ class GalleryPlugin(CMSPluginBase):
 plugin_pool.register_plugin(GalleryPlugin)
 
 
-class GalleryPicturePluginForm(forms.ModelForm):
+class GalleryPicturePluginForm(CMSPluginForm):
     # TODO check if name is empty
     class Meta:
         fields = '__all__'
@@ -107,7 +108,7 @@ class GalleryPicturePlugin(CMSPluginBase):
 plugin_pool.register_plugin(GalleryPicturePlugin)
 
 
-class PicturePluginForm(forms.ModelForm):
+class PicturePluginForm(CMSPluginForm):
     # TODO check if name is empty
     class Meta:
         fields = '__all__'

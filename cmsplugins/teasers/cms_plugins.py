@@ -7,12 +7,13 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
+from cmsplugins.base.forms import CMSPluginForm
 
 from . import conf
 from .models import TeaserWrap, Teaser
 
 
-class TeaserWrapPluginForm(forms.ModelForm):
+class TeaserWrapPluginForm(CMSPluginForm):
 
     class Meta:
         model = TeaserWrap
@@ -59,7 +60,7 @@ if conf.TEASER_LINK_MODEL:
         fields = conf.TEASER_LINK_FIELDS
 
 
-class TeaserPluginForm(forms.ModelForm):
+class TeaserPluginForm(CMSPluginForm):
 
     class Meta:
         model = Teaser

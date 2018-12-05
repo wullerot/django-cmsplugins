@@ -4,9 +4,10 @@ from django import forms
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin.utils import get_indicator_hidden, load_object
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
+from cmsplugins.base.forms import CMSPluginForm
+from cmsplugins.base.utils import get_indicator_hidden, load_object
 
 from . import conf
 from .models import Slider, Slide
@@ -46,7 +47,7 @@ class SlideLinkInline(admin.StackedInline):
     model = load_object(conf.SLIDE_LINK_MODEL)
 
 
-class SliderPluginForm(forms.ModelForm):
+class SliderPluginForm(CMSPluginForm):
     class Meta:
         model = Slider
         fields = conf.SLIDER_FIELDS
@@ -88,7 +89,7 @@ class SliderPlugin(CMSPluginBase):
 plugin_pool.register_plugin(SliderPlugin)
 
 
-class SliderSlidePluginForm(forms.ModelForm):
+class SliderSlidePluginForm(CMSPluginForm):
     class Meta:
         model = Slide
         fields = conf.SLIDERSLIDE_FIELDS

@@ -4,7 +4,7 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin import defaults
+from cmsplugins.base import defaults
 
 
 if not hasattr(settings, 'MAPS_GOOGLEMAP_BROWSER_KEY'):

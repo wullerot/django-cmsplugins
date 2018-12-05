@@ -5,8 +5,8 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.html import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin.models import BasePlugin
-from cmsplugins.baseplugin.utils import get_str_from_tuple
+from cmsplugins.base.models import BasePlugin
+from cmsplugins.base.utils import get_str_from_tuple
 from filer.fields.image import FilerImageField
 
 from . import conf

@@ -5,7 +5,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin.models import BasePlugin
+from cmsplugins.base.models import BasePlugin
 
 
 @python_2_unicode_compatible

@@ -3,15 +3,16 @@ from __future__ import unicode_literals
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin.utils import get_indicator_hidden
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
+from cmsplugins.base.forms import CMSPluginForm
+from cmsplugins.base.utils import get_indicator_hidden
 
 from . import conf
 from .models import Section
 
 
-class SectionPluginForm(forms.ModelForm):
+class SectionPluginForm(CMSPluginForm):
     class Meta:
         fields = '__all__'
         model = Section

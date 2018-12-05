@@ -5,7 +5,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin.models import BasePlugin, BaseLink
+from cmsplugins.base.models import BasePlugin, BaseLink
 from filer.fields.image import FilerImageField
 
 
