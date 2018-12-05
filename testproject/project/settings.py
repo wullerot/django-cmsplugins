@@ -39,6 +39,7 @@ THUMBNAIL_QUALITY = 95
 INSTALLED_APPS = [
 
     'project',
+    'cmsplugins.base',
     'cmsplugins.columns',
     'cmsplugins.headers',
     'cmsplugins.iframes',
