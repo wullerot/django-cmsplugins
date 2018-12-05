@@ -1,32 +1,35 @@
 from __future__ import unicode_literals
 
 from django import forms
-# from django.conf import settings
 from django.contrib import admin
 
-from cms.plugin_pool import plugin_pool
-
-from ..models import CMSPluginConf
+from ..models import CMSPluginConf, CMSPluginSiteConf
 
 
-class CMSPluginConfAdminForm(forms.ModelForm):
+class CMSPluginConfInlineForm(forms.ModelForm):
 
     class Meta:
         fields = '__all__'
         model = CMSPluginConf
         widgets = {}
 
-    def __init__(self, *args, **kwargs):
-        plugin_list = self.get_plugin_list() # NOQA
-        super(CMSPluginConfAdminForm, self).__init__(*args, **kwargs)
 
-    def get_plugin_list(self):
-        for p in plugin_pool.get_all_plugins():
-            for k, v in p.__dict__.items():
-                print k, v
-        return []
+class CMSPluginConfInline(admin.StackedInline):
+
+    extra = 0
+    form = CMSPluginConfInlineForm
+    model = CMSPluginConf
 
 
-class CMSPluginConfAdmin(admin.ModelAdmin):
+class CMSPluginSiteConfAdminForm(forms.ModelForm):
 
-    form = CMSPluginConfAdminForm
+    class Meta:
+        fields = '__all__'
+        model = CMSPluginSiteConf
+        widgets = {}
+
+
+class CMSPluginSiteConfAdmin(admin.ModelAdmin):
+
+    form = CMSPluginSiteConfAdminForm
+    inlines = [CMSPluginConfInline]

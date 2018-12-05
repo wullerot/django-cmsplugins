@@ -141,7 +141,7 @@ class GoogleMap(BasePlugin):
                 geocode_result = gmaps.geocode(address)
                 self.lat = geocode_result[0]['geometry']['location']['lat']
                 self.lng = geocode_result[0]['geometry']['location']['lng']
-            except Exception as e:
+            except Exception:
                 pass
         super(GoogleMap, self).save(*args, **kwargs)
 

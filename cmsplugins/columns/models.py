@@ -14,12 +14,7 @@ from . import conf
 
 @python_2_unicode_compatible
 class Column(BasePlugin):
-    bg_color = models.CharField(
-        max_length=50,
-        blank=True,
-        default='',
-        verbose_name=_('background color'),
-    )
+
     bg_image = FilerImageField(
         null=True,
         default=None,

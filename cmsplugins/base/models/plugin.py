@@ -13,6 +13,12 @@ class BasePlugin(CMSPlugin):
 
     cmsplugin = True
 
+    bg_color = models.CharField(
+        max_length=200,
+        blank=True,
+        default='',
+        verbose_name=_('bg color'),
+    )
     css_class = models.CharField(
         max_length=200,
         blank=True,

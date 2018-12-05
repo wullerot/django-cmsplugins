@@ -137,7 +137,6 @@ class Teaser(CMSPlugin):
             return self.name
         elif self.link_cms:
             name_obj = self.get_page_info()
-            print name_obj
             if name_obj:
                 # TODO do this the proper way
                 try:

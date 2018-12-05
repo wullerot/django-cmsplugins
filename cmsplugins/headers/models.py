@@ -7,11 +7,10 @@ from django.utils.translation import ugettext_lazy as _
 from cmsplugins.base.models import BasePlugin
 from filer.fields.image import FilerImageField
 
-from . import conf
-
 
 @python_2_unicode_compatible
 class Header(BasePlugin):
+
     abstract = models.TextField(
         max_length=250,
         default='',

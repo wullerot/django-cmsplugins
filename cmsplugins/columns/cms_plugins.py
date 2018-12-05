@@ -1,6 +1,5 @@
 from __future__ import unicode_literals
 
-from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
@@ -8,35 +7,23 @@ from cms.plugin_base import CMSPluginBase
 
 from cmsplugins.base.forms import CMSPluginForm
 from cmsplugins.base.utils import get_indicator_hidden
+from cmsplugins.base.cms_plugins import CMSPluginMixin
 
 from . import conf
 from .models import Column
 
 
 class ColumnPluginForm(CMSPluginForm):
+
     class Meta:
         model = Column
         fields = '__all__'
-        widgets = {
-            'bg_color': forms.Select(
-                choices=conf.COLUMN_BACKGROUND_COLORS
-            ),
-            'css_class': forms.Select(
-                choices=conf.COLUMN_CSS_CLASSES
-            ),
-            'height': forms.Select(
-                choices=conf.COLUMN_HEIGHTS
-            ),
-            'width': forms.Select(
-                choices=conf.COLUMN_WIDTHS
-            ),
-        }
 
 
-class ColumnPlugin(CMSPluginBase):
+class ColumnPlugin(CMSPluginMixin, CMSPluginBase):
     allow_children = True
     child_classes = conf.COLUMN_PLUGINS
-    fieldsets = conf.COLUMN_FIELDSETS
+    # fieldsets = conf.settings.CMSPLUGINS['ColumnPlugin']['fieldsets']
     form = ColumnPluginForm
     model = Column
     module = _('layout')
