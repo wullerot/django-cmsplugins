@@ -66,6 +66,7 @@ class BasePlugin(CMSPlugin):
         Page,
         editable=False,
         null=True,
+        related_name='%(app_label)s_%(class)s_set',
     )
 
     class Meta:
@@ -79,8 +80,8 @@ class BasePlugin(CMSPlugin):
         )
 
     def save(self, *args, **kwargs):
-        if self.page:
-            self.cms_page_id = self.page.id
+        if self.placeholder.page:
+            self.cms_page_id = self.placeholder.page.id
         if self.name:
             self.slug = '{}-{}'.format(
                 slugify(self.name),
