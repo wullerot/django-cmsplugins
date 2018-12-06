@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from importlib import import_module
 
+from django import forms
 from django.utils import six
 from django.utils.html import mark_safe
 from django.utils.translation import ugettext_lazy as _
@@ -35,3 +36,27 @@ def load_object(import_path):
     module_name, object_name = import_path.rsplit('.', 1)
     module = import_module(module_name)
     return getattr(module, object_name)
+
+
+def get_widget_class(widget_name):
+    if not widget_name:
+        return None
+    # TODO clean up this mess
+    if isinstance(widget_name, six.string_types):
+        modules = widget_name.split('.')
+        if len(modules) == 1:
+            module = forms
+        else:
+            try:
+                module = import_module('.'.join(modules[:-1]))
+            except Exception:
+                pass
+        if module:
+            return getattr(module, modules[-1], None)
+        return None
+    try:
+        if issubclass(widget_name, forms.Widget):
+            return widget_name
+    except Exception:
+        pass
+    return None

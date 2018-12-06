@@ -21,9 +21,9 @@ class ColumnPluginForm(CMSPluginForm):
 
 
 class ColumnPlugin(CMSPluginMixin, CMSPluginBase):
-    allow_children = True
-    child_classes = conf.COLUMN_PLUGINS
-    # fieldsets = conf.settings.CMSPLUGINS['ColumnPlugin']['fieldsets']
+    allow_children = conf.settings.CMSPLUGINS['ColumnPlugin']['allow_children']
+    child_classes = conf.settings.CMSPLUGINS['ColumnPlugin']['child_classes']
+    fieldsets = conf.settings.CMSPLUGINS['ColumnPlugin']['fieldsets']
     form = ColumnPluginForm
     model = Column
     module = _('layout')
