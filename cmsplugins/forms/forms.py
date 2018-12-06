@@ -39,6 +39,8 @@ class CMSPluginForm(forms.ModelForm):
                     if not widget_class:
                         widget_class = forms.Select
                     kwargs['choices'] = f.get('choices')
+                elif getattr(self.fields[k].widget, 'choices', None):
+                    kwargs['choices'] = self.fields[k].widget.choices
                 elif not widget_class:
                     widget_class = self.fields[k].widget.__class__
                 if f.get('attrs'):

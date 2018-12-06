@@ -4,22 +4,17 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
 
-LINK_MODEL = getattr(
-    settings,
-    'BASEPLUGIN_LINK_MODEL',
-    'base.models.BaseLink'
-)
-CSS_CLASSES = getattr(
-    settings,
-    'BASEPLUGIN_CSS_CLASSES',
-    [
+DEFAULTS = {
+    'link_model': 'base.models.BaseLink',
+    'bg_colors': [
         ('', _('---')),
-    ]
-)
-HEIGHTS = getattr(
-    settings,
-    'BASEPLUGIN_HEIGHTS',
-    (
+        ('bg-bright', _('bright')),
+        ('bg-dark', _('dark')),
+    ],
+    'css_classes': [
+        ('', _('---')),
+    ],
+    'heights': [
         ('', _('defined by css')),
         ('window-height h-100', _('full window height')),
         ('window-height h-75', _('75% of window height')),
@@ -28,41 +23,20 @@ HEIGHTS = getattr(
         ('ratio ratio-16-9', _('aspect ratio 16:9')),
         ('ratio ratio-2-1', _('aspect ratio 2:1')),
         ('ratio ratio-4-1', _('aspect ratio 4:1')),
-    )
-)
-WIDTHS = getattr(
-    settings,
-    'BASEPLUGIN_WIDTHS',
-    (
+    ],
+    'widths': [
         ('', _('defined by css')),
         ('w-100', _('100%')),
         ('w-66', _('66%')),
         ('w-50', _('50%')),
         ('w-33', _('33%')),
-    )
-)
-BACKGROUND_COLORS = getattr(
-    settings,
-    'BASEPLUGIN_BACKGROUND_COLORS',
-    (
-        ('', _('---')),
-        ('bg-bright', _('bright')),
-        ('bg-dark', _('dark')),
-    )
-)
-TEXT_COLORS = getattr(
-    settings,
-    'BASEPLUGIN_TEXT_COLORS',
-    (
+    ],
+    'text_colors': [
         ('', _('---')),
         ('text-bright', _('bright')),
         ('text-dark', _('dark')),
-    )
-)
-TEXT_POSITIONS = getattr(
-    settings,
-    'BASEPLUGIN_TEXT_POSITIONS',
-    (
+    ],
+    'text_positions': [
         ('text-top-left', _('top left')),
         ('text-top-center', _('top center')),
         ('text-top-right', _('top right')),
@@ -72,5 +46,20 @@ TEXT_POSITIONS = getattr(
         ('text-bottom-center', _('bottom center')),
         ('text-bottom-left', _('bottom left')),
         ('text-bottom-right', _('bottom right')),
-    )
-)
+    ]
+}
+
+
+if not hasattr(settings, 'CMSPLUGINS'):
+    settings.CMSPLUGINS = {}
+DEFAULTS.update(settings.CMSPLUGINS.get('defaults', {}))
+settings.CMSPLUGINS['defaults'] = DEFAULTS
+
+
+LINK_MODEL = settings.CMSPLUGINS['defaults']['link_model']
+BACKGROUND_COLORS = settings.CMSPLUGINS['defaults']['bg_colors']
+CSS_CLASSES = settings.CMSPLUGINS['defaults']['css_classes']
+HEIGHTS = settings.CMSPLUGINS['defaults']['heights']
+WIDTHS = settings.CMSPLUGINS['defaults']['widths']
+TEXT_COLORS = settings.CMSPLUGINS['defaults']['text_colors']
+TEXT_POSITIONS = settings.CMSPLUGINS['defaults']['text_positions']

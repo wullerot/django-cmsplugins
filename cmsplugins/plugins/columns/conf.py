@@ -2,14 +2,8 @@ from __future__ import unicode_literals
 
 from django.conf import settings
 
-from cmsplugins import defaults
 
-
-if not hasattr(settings, 'CMSPLUGINS'):
-    settings.CMSPLUGINS = {}
-
-
-settings.CMSPLUGINS['ColumnPlugin'] = {
+COLUMNPLUGIN_CONF = {
     'allow_children': False,
     'child_classes': [],
     'fieldsets': (
@@ -51,20 +45,23 @@ settings.CMSPLUGINS['ColumnPlugin'] = {
     'widgets': {
         'bg_color': {
             'widget': 'Select',
-            'choices': defaults.BACKGROUND_COLORS,
+            'choices': settings.CMSPLUGINS['defaults']['bg_colors'],
         },
         'css_class': {
             'widget': 'Select',
-            'choices': defaults.CSS_CLASSES,
+            'choices': settings.CMSPLUGINS['defaults']['css_classes'],
         },
         'height': {
             'widget': 'Select',
-            'choices': defaults.HEIGHTS,
+            'choices': settings.CMSPLUGINS['defaults']['heights'],
         },
         'width': {
             'widget': 'Select',
-            'choices': defaults.WIDTHS,
+            'choices': settings.CMSPLUGINS['defaults']['widths'],
         },
     }
-
 }
+
+
+COLUMNPLUGIN_CONF.update(settings.CMSPLUGINS.get('ColumnPlugin', {}))
+settings.CMSPLUGINS['ColumnPlugin'] = COLUMNPLUGIN_CONF

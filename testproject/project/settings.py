@@ -224,6 +224,16 @@ SECTIONS_SECTION_PLUGINS = [
     'GoogleMapPlugin',
 ]
 
+CMSPLUGINS = {
+    'ColumnPlugin': {
+        'widgets': {
+            'bg_color': {
+                'widget': 'RadioSelect',
+            }
+        }
+    }
+}
+
 
 MAPS_GOOGLEMAP_BROWSER_KEY = 'xxx'
 MAPS_GOOGLEMAP_SERVER_KEY = 'xxx'
