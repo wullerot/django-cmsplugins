@@ -5,14 +5,15 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from cmsplugins.forms import CMSPluginForm
+
+from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 from cmsplugins.utils import get_indicator_hidden
 
 from . import conf
 from .models import Video
 
 
-class VideoPluginForm(CMSPluginForm):
+class VideoPluginForm(CMSPluginFormMixin, forms.ModelForm):
 
     class Meta:
         model = Video
@@ -41,7 +42,7 @@ class VideoPluginForm(CMSPluginForm):
         }
 
 
-class VideoPlugin(CMSPluginBase):
+class VideoPlugin(CMSPluginMixin, CMSPluginBase):
     allow_children = conf.VIDEO_ALLOW_CHILDREN
     child_classes = conf.VIDEO_PLUGINS
     fieldsets = conf.VIDEO_FIELDSETS

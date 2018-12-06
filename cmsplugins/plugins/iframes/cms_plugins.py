@@ -5,14 +5,15 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from cmsplugins.forms import CMSPluginForm
+
+from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 from cmsplugins.utils import get_indicator_hidden
 
 from . import conf
 from .models import IFrame
 
 
-class IFramePluginForm(CMSPluginForm):
+class IFramePluginForm(CMSPluginFormMixin, forms.ModelForm):
     class Meta:
         model = IFrame
         fields = '__all__'
@@ -37,7 +38,7 @@ class IFramePluginForm(CMSPluginForm):
         }
 
 
-class IFramePlugin(CMSPluginBase):
+class IFramePlugin(CMSPluginMixin, CMSPluginBase):
     fieldsets = conf.IFRAME_FIELDSETS
     form = IFramePluginForm
     model = IFrame

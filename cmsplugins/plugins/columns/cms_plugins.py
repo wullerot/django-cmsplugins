@@ -1,18 +1,18 @@
 from __future__ import unicode_literals
 
+from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 
-from cmsplugins.forms import CMSPluginForm
+from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 from cmsplugins.utils import get_indicator_hidden
-from cmsplugins.cms_plugins import CMSPluginMixin
 
 from .models import Column
 
 
-class ColumnPluginForm(CMSPluginForm):
+class ColumnPluginForm(CMSPluginFormMixin, forms.ModelForm):
 
     class Meta:
         model = Column

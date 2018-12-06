@@ -5,14 +5,15 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from cmsplugins.forms import CMSPluginForm
+
+from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 from cmsplugins.utils import get_indicator_hidden
 
 from . import conf
 from .models import Picture, Gallery
 
 
-class GalleryPluginForm(CMSPluginForm):
+class GalleryPluginForm(CMSPluginFormMixin, forms.ModelForm):
     class Meta:
         fields = '__all__'
         model = Gallery
@@ -39,7 +40,7 @@ class GalleryPluginForm(CMSPluginForm):
         }
 
 
-class GalleryPlugin(CMSPluginBase):
+class GalleryPlugin(CMSPluginMixin, CMSPluginBase):
     allow_children = True
     child_classes = conf.GALLERY_PLUGINS
     fieldsets = conf.GALLERY_FIELDSETS
@@ -62,7 +63,7 @@ class GalleryPlugin(CMSPluginBase):
 plugin_pool.register_plugin(GalleryPlugin)
 
 
-class GalleryPicturePluginForm(CMSPluginForm):
+class GalleryPicturePluginForm(CMSPluginFormMixin, forms.ModelForm):
     # TODO check if name is empty
     class Meta:
         fields = '__all__'
@@ -87,7 +88,7 @@ class GalleryPicturePluginForm(CMSPluginForm):
         }
 
 
-class GalleryPicturePlugin(CMSPluginBase):
+class GalleryPicturePlugin(CMSPluginMixin, CMSPluginBase):
     fieldsets = conf.GALLERYPICTURE_FIELDSETS
     form = GalleryPicturePluginForm
     model = Picture
@@ -108,7 +109,7 @@ class GalleryPicturePlugin(CMSPluginBase):
 plugin_pool.register_plugin(GalleryPicturePlugin)
 
 
-class PicturePluginForm(CMSPluginForm):
+class PicturePluginForm(CMSPluginFormMixin, forms.ModelForm):
     # TODO check if name is empty
     class Meta:
         fields = '__all__'
@@ -133,7 +134,7 @@ class PicturePluginForm(CMSPluginForm):
         }
 
 
-class PicturePlugin(CMSPluginBase):
+class PicturePlugin(CMSPluginMixin, CMSPluginBase):
     fieldsets = conf.PICTURE_FIELDSETS
     form = PicturePluginForm
     model = Picture

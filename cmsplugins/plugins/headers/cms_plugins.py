@@ -5,49 +5,19 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from cmsplugins.forms import CMSPluginForm
+from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 from cmsplugins.utils import get_indicator_hidden
 
-from . import conf
 from .models import Header
 
 
-class HeaderPluginForm(CMSPluginForm):
+class HeaderPluginForm(CMSPluginFormMixin, forms.ModelForm):
     class Meta:
         model = Header
         fields = '__all__'
-        widgets = {
-            'abstract': forms.Textarea(
-                attrs={'rows': 4}
-            ),
-            'css_class': forms.Select(
-                choices=conf.HEADER_CSS_CLASSES,
-            ),
-            'description': forms.Textarea(
-                attrs={'rows': 8}
-            ),
-            'height': forms.Select(
-                attrs={'class': 'width'},
-                choices=conf.HEADER_HEIGHTS,
-            ),
-            'name': forms.Textarea(
-                attrs={'rows': 2}
-            ),
-            'text_color': forms.Select(
-                choices=conf.HEADER_TEXT_COLORS,
-            ),
-            'text_position': forms.Select(
-                choices=conf.HEADER_TEXT_POSITIONS,
-            ),
-            'width': forms.Select(
-                attrs={'class': 'width'},
-                choices=conf.HEADER_WIDTHS,
-            ),
-        }
 
 
-class HeaderPlugin(CMSPluginBase):
-    fieldsets = conf.HEADER_FIELDSETS
+class HeaderPlugin(CMSPluginMixin, CMSPluginBase):
     form = HeaderPluginForm
     model = Header
     module = _('content')

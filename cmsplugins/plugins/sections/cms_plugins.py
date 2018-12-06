@@ -5,14 +5,15 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from cmsplugins.forms import CMSPluginForm
+from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 from cmsplugins.utils import get_indicator_hidden
 
 from . import conf
 from .models import Section
 
 
-class SectionPluginForm(CMSPluginForm):
+class SectionPluginForm(CMSPluginFormMixin, forms.ModelForm):
+
     class Meta:
         fields = '__all__'
         model = Section
@@ -35,7 +36,8 @@ class SectionPluginForm(CMSPluginForm):
         }
 
 
-class SectionPlugin(CMSPluginBase):
+class SectionPlugin(CMSPluginMixin, CMSPluginBase):
+
     allow_children = True
     child_classes = conf.SECTION_PLUGINS
     fieldsets = conf.SECTION_FIELDSETS

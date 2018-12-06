@@ -5,14 +5,16 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from cmsplugins.forms import CMSPluginForm
+
 from text_ckeditor.widgets import CKEditorWidget
+
+from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 
 from . import conf
 from .models import Text
 
 
-class TextCKEditorPluginForm(CMSPluginForm):
+class TextCKEditorPluginForm(CMSPluginFormMixin, forms.ModelForm):
 
     class Meta:
         fields = '__all__'
@@ -33,7 +35,7 @@ class TextCKEditorPluginForm(CMSPluginForm):
         }
 
 
-class TextCKEditorPlugin(CMSPluginBase):
+class TextCKEditorPlugin(CMSPluginMixin, CMSPluginBase):
 
     allow_children = conf.CKEDITOR_ALLOW_CHILDREN
     child_classes = conf.CKEDITOR_PLUGINS
@@ -52,7 +54,7 @@ class TextCKEditorPlugin(CMSPluginBase):
 plugin_pool.register_plugin(TextCKEditorPlugin)
 
 
-class TextPluginForm(CMSPluginForm):
+class TextPluginForm(CMSPluginFormMixin, forms.ModelForm):
 
     class Meta:
         fields = '__all__'
@@ -73,7 +75,7 @@ class TextPluginForm(CMSPluginForm):
         }
 
 
-class TextPlugin(CMSPluginBase):
+class TextPlugin(CMSPluginMixin, CMSPluginBase):
 
     allow_children = conf.TEXT_ALLOW_CHILDREN
     child_classes = conf.TEXT_PLUGINS
@@ -92,7 +94,7 @@ class TextPlugin(CMSPluginBase):
 plugin_pool.register_plugin(TextPlugin)
 
 
-class TitlePluginForm(CMSPluginForm):
+class TitlePluginForm(CMSPluginFormMixin, forms.ModelForm):
 
     class Meta:
         fields = '__all__'
@@ -113,7 +115,7 @@ class TitlePluginForm(CMSPluginForm):
         }
 
 
-class TitlePlugin(CMSPluginBase):
+class TitlePlugin(CMSPluginMixin, CMSPluginBase):
 
     allow_children = conf.TITLE_ALLOW_CHILDREN
     child_classes = conf.TITLE_PLUGINS

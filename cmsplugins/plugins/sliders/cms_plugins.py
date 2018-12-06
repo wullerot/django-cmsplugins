@@ -6,7 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from cmsplugins.forms import CMSPluginForm
+
+from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 from cmsplugins.utils import get_indicator_hidden, load_object
 
 from . import conf
@@ -47,7 +48,7 @@ class SlideLinkInline(admin.StackedInline):
     model = load_object(conf.SLIDE_LINK_MODEL)
 
 
-class SliderPluginForm(CMSPluginForm):
+class SliderPluginForm(CMSPluginFormMixin, forms.ModelForm):
     class Meta:
         model = Slider
         fields = conf.SLIDER_FIELDS
@@ -64,7 +65,7 @@ class SliderPluginForm(CMSPluginForm):
         }
 
 
-class SliderPlugin(CMSPluginBase):
+class SliderPlugin(CMSPluginMixin, CMSPluginBase):
     allow_children = True
     child_classes = conf.SLIDER_PLUGINS
     exclude = conf.SLIDER_EXCLUDE
@@ -89,7 +90,7 @@ class SliderPlugin(CMSPluginBase):
 plugin_pool.register_plugin(SliderPlugin)
 
 
-class SliderSlidePluginForm(CMSPluginForm):
+class SliderSlidePluginForm(CMSPluginFormMixin, forms.ModelForm):
     class Meta:
         model = Slide
         fields = conf.SLIDERSLIDE_FIELDS
@@ -130,7 +131,7 @@ class SliderSlidePluginForm(CMSPluginForm):
         }
 
 
-class SliderSlidePlugin(CMSPluginBase):
+class SliderSlidePlugin(CMSPluginMixin, CMSPluginBase):
     allow_children = False
     exclude = conf.SLIDERSLIDE_EXCLUDE
     fieldsets = conf.SLIDERSLIDE_FIELDSETS
