@@ -1,24 +1,24 @@
-from __future__ import unicode_literals
-
 from django.conf import settings
-from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from django.urls import path, include
+
+
+admin.autodiscover()
 
 
 urlpatterns = i18n_patterns(
-    url(
-        r'^admin/',
-        include(admin.site.urls)
+    path(
+        'admin/',
+        admin.site.urls
     ),
-    url(
-        r'^',
+    path(
+        '',
         include('cms.urls')
     ),
 )
 
 
-# When running debug/devserver let django deliver static and media files
 if settings.DEBUG:
     from django.conf.urls.static import static
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
