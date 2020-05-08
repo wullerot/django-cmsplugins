@@ -16,6 +16,7 @@ class BaseLink(models.Model):
         'cms.CMSPlugin',
         null=True,
         blank=True,
+        on_delete=models.SET_NULL,
         related_name='plugin_link'
     )
     name = models.CharField(

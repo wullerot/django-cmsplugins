@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 DEFAULTS = {
-    'link_model': 'base.models.BaseLink',
+    'link_model': 'text_ckeditor_links.Link',
     'bg_colors': [
         ('', _('---')),
         ('bg-bright', _('bright')),

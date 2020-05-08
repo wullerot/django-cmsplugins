@@ -16,6 +16,7 @@ from . import conf
 
 @python_2_unicode_compatible
 class TeaserWrap(CMSPlugin):
+
     css_class = models.CharField(
         max_length=200,
         blank=True,
@@ -59,6 +60,7 @@ class TeaserWrap(CMSPlugin):
         Page,
         editable=False,
         null=True,
+        on_delete=models.SET_NULL,
         related_name="cms_teasers_wrap_set"
     )
 
@@ -76,6 +78,7 @@ class TeaserWrap(CMSPlugin):
 
 
 class Teaser(CMSPlugin):
+
     link_cms = PageField(
         blank=True,
         null=True,
@@ -129,7 +132,7 @@ class Teaser(CMSPlugin):
                 # TODO do this the proper way
                 try:
                     return img_obj.image
-                except: # NOQA
+                except:  # NOQA
                     return ''
 
     def get_name(self):
@@ -141,7 +144,7 @@ class Teaser(CMSPlugin):
                 # TODO do this the proper way
                 try:
                     return name_obj.name
-                except: # NOQA
+                except:  # NOQA
                     return ''
 
     def get_body(self):
@@ -153,7 +156,7 @@ class Teaser(CMSPlugin):
                 # TODO do this the proper way
                 try:
                     return body_obj.abstract or body_obj.description
-                except: # NOQA
+                except:  # NOQA
                     return ''
 
     def copy_relations(self, original):

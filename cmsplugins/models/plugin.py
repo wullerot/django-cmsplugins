@@ -66,6 +66,7 @@ class BasePlugin(CMSPlugin):
         Page,
         editable=False,
         null=True,
+        on_delete=models.SET_NULL,
         related_name='%(app_label)s_%(class)s_set',
     )
 

@@ -9,37 +9,18 @@ from cms.plugin_base import CMSPluginBase
 from cmsplugins.mixins import CMSPluginMixin, CMSPluginFormMixin
 from cmsplugins.utils import get_indicator_hidden
 
-from . import conf
 from .models import IFrame
 
 
 class IFramePluginForm(CMSPluginFormMixin, forms.ModelForm):
+
     class Meta:
         model = IFrame
         fields = '__all__'
-        widgets = {
-            'css_class': forms.Select(
-                choices=conf.IFRAME_CSS_CLASSES,
-            ),
-            'height': forms.Select(
-                attrs={'class': 'width'},
-                choices=conf.IFRAME_HEIGHTS,
-            ),
-            'markup': forms.Textarea(
-                attrs={'rows': 10}
-            ),
-            'name': forms.Textarea(
-                attrs={'rows': 2}
-            ),
-            'width': forms.Select(
-                attrs={'class': 'width'},
-                choices=conf.IFRAME_WIDTHS,
-            ),
-        }
 
 
 class IFramePlugin(CMSPluginMixin, CMSPluginBase):
-    fieldsets = conf.IFRAME_FIELDSETS
+
     form = IFramePluginForm
     model = IFrame
     module = _('content')
